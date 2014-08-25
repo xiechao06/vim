@@ -26,6 +26,7 @@ Plugin 'marijnh/tern_for_vim'
 Plugin 'alfredodeza/pytest.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+Plugin 'ervandew/screen'
 
 call vundle#end()            " required
 " Pathogen load
@@ -84,6 +85,7 @@ let g:jedi#popup_on_dot = 0
 let g:UltiSnipsExpandTrigger="<tab>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
+let g:ScreenShellGnuScreenVerticalSupport = 'patch'
 
 au BufNewFile,BufRead *.html setlocal tabstop=2 shiftwidth=2
 au BufNewFile,BufRead *.rst setlocal tabstop=3 shiftwidth=3
