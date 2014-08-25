@@ -27,6 +27,8 @@ Plugin 'alfredodeza/pytest.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'ervandew/screen'
+Plugin 'pangloss/vim-javascript'
+Plugin 'jiangmiao/auto-pairs'
 
 call vundle#end()            " required
 " Pathogen load
