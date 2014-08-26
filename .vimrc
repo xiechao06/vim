@@ -27,6 +27,7 @@ Plugin 'alfredodeza/pytest.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'ervandew/screen'
+Plugin 'thinca/vim-visualstar'
 
 call vundle#end()            " required
 " Pathogen load
@@ -48,6 +49,7 @@ set cc=78
 set ruler
 set fileencoding=utf-8
 set encoding=utf-8
+set incsearch
 
 " configure solarized, see
 " https://github.com/Anthony25/gnome-terminal-colors-solarized
@@ -100,3 +102,6 @@ map <Leader>e :e ~/.vimrc<CR>
 map <Leader>p :e ~/.temp<CR>
 nmap <F8> :TagbarToggle<CR>
 nmap <F2> :NERDTreeToggle<CR>
+nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
+nnoremap & :&&<CR>
+xnoremap & :&&<CR>
