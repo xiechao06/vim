@@ -28,6 +28,7 @@ Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'ervandew/screen'
 Plugin 'thinca/vim-visualstar'
+Plugin 'tpope/vim-repeat'
 
 call vundle#end()            " required
 " Pathogen load
