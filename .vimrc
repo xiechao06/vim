@@ -31,12 +31,15 @@ Plugin 'thinca/vim-visualstar'
 Plugin 'tpope/vim-repeat'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'kovisoft/slimv'
+Plugin 'gregsexton/MatchTag'
+Plugin 'jiangmiao/auto-pairs'
 
 call vundle#end()            " required
 " Pathogen load
 filetype off
 filetype plugin indent on
 
+runtime macros/matchit.vim
 
 set nocompatible
 set hlsearch softtabstop=4 tabstop=4 shiftwidth=4 expandtab
@@ -80,7 +83,7 @@ let g:ctrlp_map = '<F5>'
 let g:ctrlp_cmd = 'CtrlP'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 let g:ctrlp_custom_ignore = {
-    \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+    \ 'dir':  '\v([\/]\.(git|hg|svn)$|.+static\/dist)',
     \ 'file': '\v\.(exe|so|dll)$',
 \ }
 
@@ -92,8 +95,8 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsEditSplit="vertical"
 let g:ScreenShellGnuScreenVerticalSupport = 'patch'
 
-au BufNewFile,BufRead *.html setlocal tabstop=2 shiftwidth=2
-au BufNewFile,BufRead *.rst setlocal tabstop=3 shiftwidth=3
+au BufNewFile,BufRead *.html setlocal tabstop=2 shiftwidth=2 softtabstop=2
+au BufNewFile,BufRead *.rst setlocal tabstop=3 shiftwidth=3 softtabstop=2
 au BufWritePost .vimrc :source ~/.vimrc
 au BufWritePost .vimrc.local :source ~/.vimrc.local
 au VimEnter * :source .Session.vim
