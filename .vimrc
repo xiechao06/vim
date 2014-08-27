@@ -28,6 +28,11 @@ Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'ervandew/screen'
 Plugin 'pangloss/vim-javascript'
+Plugin 'thinca/vim-visualstar'
+Plugin 'tpope/vim-repeat'
+Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'kovisoft/slimv'
+Plugin 'gregsexton/MatchTag'
 Plugin 'jiangmiao/auto-pairs'
 
 call vundle#end()            " required
@@ -35,6 +40,7 @@ call vundle#end()            " required
 filetype off
 filetype plugin indent on
 
+runtime macros/matchit.vim
 
 set nocompatible
 set hlsearch softtabstop=4 tabstop=4 shiftwidth=4 expandtab
@@ -50,6 +56,7 @@ set cc=78
 set ruler
 set fileencoding=utf-8
 set encoding=utf-8
+set incsearch
 
 " configure solarized, see
 " https://github.com/Anthony25/gnome-terminal-colors-solarized
@@ -77,7 +84,7 @@ let g:ctrlp_map = '<F5>'
 let g:ctrlp_cmd = 'CtrlP'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 let g:ctrlp_custom_ignore = {
-    \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+    \ 'dir':  '\v([\/]\.(git|hg|svn)$|.+static\/dist)',
     \ 'file': '\v\.(exe|so|dll)$',
 \ }
 
@@ -89,9 +96,10 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsEditSplit="vertical"
 let g:ScreenShellGnuScreenVerticalSupport = 'patch'
 
-au BufNewFile,BufRead *.html setlocal tabstop=2 shiftwidth=2
-au BufNewFile,BufRead *.rst setlocal tabstop=3 shiftwidth=3
+au BufNewFile,BufRead *.html setlocal tabstop=2 shiftwidth=2 softtabstop=2
+au BufNewFile,BufRead *.rst setlocal tabstop=3 shiftwidth=3 softtabstop=2
 au BufWritePost .vimrc :source ~/.vimrc
+au BufWritePost .vimrc.local :source ~/.vimrc.local
 au VimEnter * :source .Session.vim
 au VimLeave * :mksession! .Session.vim
 au BufNewFile,BufRead *.hbs :set filetype=html
@@ -102,3 +110,11 @@ map <Leader>e :e ~/.vimrc<CR>
 map <Leader>p :e ~/.temp<CR>
 nmap <F8> :TagbarToggle<CR>
 nmap <F2> :NERDTreeToggle<CR>
+nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
+nnoremap & :&&<CR>
+xnoremap & :&&<CR>
+
+if filereadable(expand("$HOME/.vimrc.local"))
+    source $HOME/.vimrc.local
+endif
+
