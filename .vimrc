@@ -29,6 +29,8 @@ Plugin 'honza/vim-snippets'
 Plugin 'ervandew/screen'
 Plugin 'thinca/vim-visualstar'
 Plugin 'tpope/vim-repeat'
+Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'kovisoft/slimv'
 
 call vundle#end()            " required
 " Pathogen load
@@ -93,6 +95,7 @@ let g:ScreenShellGnuScreenVerticalSupport = 'patch'
 au BufNewFile,BufRead *.html setlocal tabstop=2 shiftwidth=2
 au BufNewFile,BufRead *.rst setlocal tabstop=3 shiftwidth=3
 au BufWritePost .vimrc :source ~/.vimrc
+au BufWritePost .vimrc.local :source ~/.vimrc.local
 au VimEnter * :source .Session.vim
 au VimLeave * :mksession! .Session.vim
 au BufNewFile,BufRead *.hbs :set filetype=html
@@ -106,3 +109,8 @@ nmap <F2> :NERDTreeToggle<CR>
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 nnoremap & :&&<CR>
 xnoremap & :&&<CR>
+
+if filereadable(expand("$HOME/.vimrc.local"))
+    source $HOME/.vimrc.local
+endif
+
