@@ -34,6 +34,10 @@ Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'kovisoft/slimv'
 Plugin 'gregsexton/MatchTag'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'mattn/gist-vim'
+Plugin 'mattn/webapi-vim'
+Plugin 'suan/vim-instant-markdown'
+Plugin 'L9'
 
 call vundle#end()            " required
 " Pathogen load
@@ -59,7 +63,7 @@ set encoding=utf-8
 set incsearch
 
 " configure solarized, see
-" https://github.com/Anthony25/gnome-terminal-colors-solarized
+" https://github.com/Anthony24/gnome-terminal-colors-solarized
 set t_Co=16
 " configure airline
 let g:airline#extensions#virtualenv#enabled = 1
@@ -80,12 +84,12 @@ let g:pymode_syntax_all = 1
 let g:pymode_syntax_indent_errors = g:pymode_syntax_all
 let g:pymode_syntax_space_errors = g:pymode_syntax_all
 " configure ctrlp
-let g:ctrlp_map = '<F5>'
-let g:ctrlp_cmd = 'CtrlP'
+"let g:ctrlp_map = ',f'
+let g:ctrlp_cmd = 'CtrlPMixed'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 let g:ctrlp_custom_ignore = {
     \ 'dir':  '\v([\/]\.(git|hg|svn)$|.+static\/dist)',
-    \ 'file': '\v\.(exe|so|dll)$',
+    \ 'file': '\v\.(exe|so|dll|pyc)$',
 \ }
 
 " configure jedi-vim
@@ -104,12 +108,15 @@ au VimEnter * :source .Session.vim
 au VimLeave * :mksession! .Session.vim
 au BufNewFile,BufRead *.hbs :set filetype=html
 au BufNewFile,BufRead *.hbs setlocal tabstop=2 shiftwidth=2
+au BufNewFile,BufRead *.hbs setlocal tabstop=2 shiftwidth=2
+autocmd BufNewFile,BufRead *md set filetype=markdown
 
 let mapleader=","
 map <Leader>e :e ~/.vimrc<CR>
 map <Leader>p :e ~/.temp<CR>
-nmap <F8> :TagbarToggle<CR>
-nmap <F2> :NERDTreeToggle<CR>
+nmap <Leader>t :TagbarToggle<CR>
+nmap <Leader>n :NERDTreeToggle<CR>
+nmap <Leader>f :CtrlPMixed<CR>
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 nnoremap & :&&<CR>
 xnoremap & :&&<CR>
