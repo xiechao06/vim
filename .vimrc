@@ -1,3 +1,4 @@
+echo ">^.^<"
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -21,8 +22,8 @@ Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'maksimr/vim-jsbeautify'
-Plugin 'hallettj/jslint.vim'
-Plugin 'marijnh/tern_for_vim'
+"Plugin 'hallettj/jslint.vim'
+"Plugin 'marijnh/tern_for_vim'
 Plugin 'alfredodeza/pytest.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
@@ -36,8 +37,8 @@ Plugin 'gregsexton/MatchTag'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'mattn/gist-vim'
 Plugin 'mattn/webapi-vim'
-Plugin 'suan/vim-instant-markdown'
 Plugin 'L9'
+Plugin 'nelstrom/vim-qargs'
 
 call vundle#end()            " required
 " Pathogen load
@@ -61,6 +62,7 @@ set ruler
 set fileencoding=utf-8
 set encoding=utf-8
 set incsearch
+set number
 
 " configure solarized, see
 " https://github.com/Anthony24/gnome-terminal-colors-solarized
@@ -102,8 +104,11 @@ let g:ScreenShellGnuScreenVerticalSupport = 'patch'
 
 au BufNewFile,BufRead *.html setlocal tabstop=2 shiftwidth=2 softtabstop=2
 au BufNewFile,BufRead *.rst setlocal tabstop=3 shiftwidth=3 softtabstop=2
-au BufWritePost .vimrc :source ~/.vimrc
-au BufWritePost .vimrc.local :source ~/.vimrc.local
+augroup vimrc
+    autocmd!
+    au BufWritePost .vimrc :source ~/.vimrc
+    au BufWritePost .vimrc.local :source ~/.vimrc.local
+augroup END
 au VimEnter * :source .Session.vim
 au VimLeave * :mksession! .Session.vim
 au BufNewFile,BufRead *.hbs :set filetype=html
@@ -112,16 +117,18 @@ au BufNewFile,BufRead *.hbs setlocal tabstop=2 shiftwidth=2
 autocmd BufNewFile,BufRead *md set filetype=markdown
 
 let mapleader=","
-map <Leader>e :e ~/.vimrc<CR>
-map <Leader>p :e ~/.temp<CR>
-nmap <Leader>t :TagbarToggle<CR>
-nmap <Leader>n :NERDTreeToggle<CR>
-nmap <Leader>f :CtrlPMixed<CR>
+noremap <Leader>e :vsplit $MYVIMRC<CR>
+noremap <Leader>p :e ~/.temp<CR>
+nnoremap <Leader>t :TagbarToggle<CR>
+nnoremap <Leader>n :NERDTreeToggle<CR>
+nnoremap <Leader>f :CtrlPMixed<CR>
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 nnoremap & :&&<CR>
 xnoremap & :&&<CR>
+noremap <space> viw
 
 if filereadable(expand("$HOME/.vimrc.local"))
     source $HOME/.vimrc.local
 endif
 
+iabbrev @@ xiechao06@gmail.com
