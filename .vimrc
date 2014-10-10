@@ -27,7 +27,6 @@ Plugin 'maksimr/vim-jsbeautify'
 Plugin 'alfredodeza/pytest.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
-Plugin 'ervandew/screen'
 Plugin 'pangloss/vim-javascript'
 Plugin 'thinca/vim-visualstar'
 Plugin 'tpope/vim-repeat'
@@ -67,6 +66,8 @@ set number
 " configure solarized, see
 " https://github.com/Anthony24/gnome-terminal-colors-solarized
 set t_Co=16
+" configure slime
+let g:slime_target = "tmux"
 " configure airline
 let g:airline#extensions#virtualenv#enabled = 1
 let g:airline#extensions#branch#enabled = 1
