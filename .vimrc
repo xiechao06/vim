@@ -68,6 +68,7 @@ set number
 set t_Co=16
 " configure slime
 let g:slime_target = "tmux"
+let g:slime_python_ipython = 1
 " configure airline
 let g:airline#extensions#virtualenv#enabled = 1
 let g:airline#extensions#branch#enabled = 1
@@ -88,11 +89,10 @@ let g:pymode_syntax_indent_errors = g:pymode_syntax_all
 let g:pymode_syntax_space_errors = g:pymode_syntax_all
 " configure ctrlp
 "let g:ctrlp_map = ',f'
-let g:ctrlp_cmd = 'CtrlPMixed'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 let g:ctrlp_custom_ignore = {
-    \ 'dir':  '\v([\/]\.(git|hg|svn)$|.+static\/dist)',
-    \ 'file': '\v\.(exe|so|dll|pyc)$',
+    \ 'dir':  '\v([\/]\.(git|hg|svn)$|.+static\/dist|env)',
+    \ 'file': '\v(\.(exe|so|dll|pyc)|tags)$',
 \ }
 
 " configure jedi-vim
@@ -122,7 +122,7 @@ noremap <Leader>e :vsplit $MYVIMRC<CR>
 noremap <Leader>p :e ~/.temp<CR>
 nnoremap <Leader>t :TagbarToggle<CR>
 nnoremap <Leader>n :NERDTreeToggle<CR>
-nnoremap <Leader>f :CtrlPMixed<CR>
+nnoremap <Leader>f :CtrlP<CR>
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 nnoremap & :&&<CR>
 xnoremap & :&&<CR>
