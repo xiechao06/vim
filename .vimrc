@@ -24,6 +24,7 @@ Plugin 'davidhalter/jedi-vim'
 Plugin 'maksimr/vim-jsbeautify'
 "Plugin 'hallettj/jslint.vim'
 "Plugin 'marijnh/tern_for_vim'
+Plugin 'Raimondi/delimitMate'
 Plugin 'alfredodeza/pytest.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
@@ -33,11 +34,11 @@ Plugin 'tpope/vim-repeat'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'kovisoft/slimv'
 Plugin 'gregsexton/MatchTag'
-Plugin 'jiangmiao/auto-pairs'
 Plugin 'mattn/gist-vim'
 Plugin 'mattn/webapi-vim'
 Plugin 'L9'
 Plugin 'nelstrom/vim-qargs'
+Plugin 'flazz/vim-colorschemes'
 
 call vundle#end()            " required
 " Pathogen load
@@ -46,6 +47,14 @@ filetype plugin indent on
 
 runtime macros/matchit.vim
 
+set guioptions-=m
+set guioptions-=T
+set guioptions-=r
+set guioptions-=R
+set guioptions-=l
+set guioptions-=L
+
+set guifont=Courier\ 10\ Pitch\ Bold\ 14
 set nocompatible
 set hlsearch softtabstop=4 tabstop=4 shiftwidth=4 expandtab
 set autoindent
@@ -104,7 +113,11 @@ let g:UltiSnipsEditSplit="vertical"
 let g:ScreenShellGnuScreenVerticalSupport = 'patch'
 
 au BufNewFile,BufRead *.html setlocal tabstop=2 shiftwidth=2 softtabstop=2
-au BufNewFile,BufRead *.rst setlocal tabstop=3 shiftwidth=3 softtabstop=2
+augroup rst
+    autocmd!
+    au BufNewFile,BufRead *.rst setlocal tabstop=3 shiftwidth=3 softtabstop=2
+    au BufWritePost *.rst :silent !make html
+augroup END
 augroup vimrc
     autocmd!
     au BufWritePost .vimrc :source ~/.vimrc
