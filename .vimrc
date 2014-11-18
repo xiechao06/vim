@@ -39,6 +39,12 @@ Plugin 'mattn/webapi-vim'
 Plugin 'L9'
 Plugin 'nelstrom/vim-qargs'
 Plugin 'flazz/vim-colorschemes'
+Plugin 'sjl/gundo.vim'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'othree/html5.vim'
+Plugin 'rking/ag.vim'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'thinca/vim-quickrun'
 
 call vundle#end()            " required
 " Pathogen load
@@ -112,6 +118,8 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsEditSplit="vertical"
 let g:ScreenShellGnuScreenVerticalSupport = 'patch'
 
+let g:indent_guides_guide_size = 1
+
 au BufNewFile,BufRead *.html setlocal tabstop=2 shiftwidth=2 softtabstop=2
 augroup rst
     autocmd!
@@ -131,7 +139,7 @@ au BufNewFile,BufRead *.hbs setlocal tabstop=2 shiftwidth=2
 autocmd BufNewFile,BufRead *md set filetype=markdown
 
 let mapleader=","
-noremap <Leader>e :vsplit $MYVIMRC<CR>
+noremap <Leader>e :vsplit ~/.vimrc.local<CR>
 noremap <Leader>p :e ~/.temp<CR>
 nnoremap <Leader>t :TagbarToggle<CR>
 nnoremap <Leader>n :NERDTreeToggle<CR>
