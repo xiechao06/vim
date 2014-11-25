@@ -45,6 +45,7 @@ Plugin 'othree/html5.vim'
 Plugin 'rking/ag.vim'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'thinca/vim-quickrun'
+Plugin 'danro/rename.vim'
 
 call vundle#end()            " required
 " Pathogen load
