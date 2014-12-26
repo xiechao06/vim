@@ -20,7 +20,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'majutsushi/tagbar'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'davidhalter/jedi-vim'
+"Plugin 'davidhalter/jedi-vim'
 Plugin 'maksimr/vim-jsbeautify'
 "Plugin 'hallettj/jslint.vim'
 "Plugin 'marijnh/tern_for_vim'
@@ -107,7 +107,7 @@ let g:pymode_syntax_space_errors = g:pymode_syntax_all
 "let g:ctrlp_map = ',f'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 let g:ctrlp_custom_ignore = {
-    \ 'dir':  '\v([\/]\.(git|hg|svn)$|.+static\/dist|env)',
+    \ 'dir':  '\v([\/]\.(git|hg|svn)$|.+static\/dist|env|dist|build|bower_components)',
     \ 'file': '\v(\.(exe|so|dll|pyc)|tags)$',
 \ }
 
@@ -152,6 +152,10 @@ noremap <space> viw
 
 if filereadable(expand("$HOME/.vimrc.local"))
     source $HOME/.vimrc.local
+endif
+
+if filereadable(expand(".vimrc.local"))
+    source .vimrc.local
 endif
 
 iabbrev @@ xiechao06@gmail.com
