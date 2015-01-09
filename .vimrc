@@ -45,6 +45,8 @@ Plugin 'othree/html5.vim'
 Plugin 'rking/ag.vim'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'thinca/vim-quickrun'
+Plugin 'danro/rename.vim'
+Plugin 'editorconfig/editorconfig'
 
 call vundle#end()            " required
 " Pathogen load
@@ -124,7 +126,6 @@ au BufNewFile,BufRead *.html setlocal tabstop=2 shiftwidth=2 softtabstop=2
 augroup rst
     autocmd!
     au BufNewFile,BufRead *.rst setlocal tabstop=3 shiftwidth=3 softtabstop=2
-    au BufWritePost *.rst :silent !make html
 augroup END
 augroup vimrc
     autocmd!
