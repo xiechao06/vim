@@ -47,6 +47,7 @@ Plugin 'Lokaltog/vim-easymotion'
 Plugin 'thinca/vim-quickrun'
 Plugin 'danro/rename.vim'
 Plugin 'editorconfig/editorconfig'
+Plugin 'embear/vim-localvimrc'
 
 
 call vundle#end()            " required
@@ -109,7 +110,7 @@ let g:pymode_syntax_space_errors = g:pymode_syntax_all
 "let g:ctrlp_map = ',f'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 let g:ctrlp_custom_ignore = {
-    \ 'dir':  '\v([\/]\.(git|hg|svn)$|.+static\/dist|env|dist|build|bower_components)',
+    \ 'dir':  '\v([\/]\.(git|hg|svn)$|.+static\/dist|env|dist|build|bower_components|node_modules)',
     \ 'file': '\v(\.(exe|so|dll|pyc)|tags)$',
 \ }
 
