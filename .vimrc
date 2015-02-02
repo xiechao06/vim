@@ -123,6 +123,7 @@ let g:ScreenShellGnuScreenVerticalSupport = 'patch'
 let g:indent_guides_guide_size = 1
 let g:gist_browser_command = 'firefox %URL% &'
 
+let NERDTreeIgnore = ['\.pyc$']
 
 au BufNewFile,BufRead *.html setlocal tabstop=2 shiftwidth=2 softtabstop=2
 augroup rst
