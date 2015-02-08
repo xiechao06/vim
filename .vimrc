@@ -128,6 +128,9 @@ let g:gist_browser_command = 'firefox %URL% &'
 
 let NERDTreeIgnore = ['\.pyc$']
 
+let delimitMate_expand_cr = 1
+let delimitMate_expand_space = 1
+
 au BufNewFile,BufRead *.html setlocal tabstop=2 shiftwidth=2 softtabstop=2
 augroup rst
     autocmd!
@@ -155,6 +158,7 @@ nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 nnoremap & :&&<CR>
 xnoremap & :&&<CR>
 noremap <space> viw
+inoremap <C-Return> <CR><CR><C-o>k<Tab>
 
 if filereadable(expand("$HOME/.vimrc.local"))
     source $HOME/.vimrc.local
