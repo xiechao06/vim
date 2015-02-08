@@ -158,7 +158,7 @@ nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 nnoremap & :&&<CR>
 xnoremap & :&&<CR>
 noremap <space> viw
-inoremap <C-Return> <CR><CR><C-o>k<Tab>
+inoremap <C-j> <CR><CR><C-o>k<Tab>
 
 if filereadable(expand("$HOME/.vimrc.local"))
     source $HOME/.vimrc.local
