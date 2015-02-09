@@ -111,7 +111,7 @@ let g:pymode_syntax_space_errors = g:pymode_syntax_all
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 let g:ctrlp_custom_ignore = {
     \ 'dir':  '\v([\/]\.(git|hg|svn)$|.+static\/dist|env|dist|build|bower_components|node_modules)',
-    \ 'file': '\v(\.(exe|so|dll|pyc)|tags)$',
+    \ 'file': '\v(\.(exe|so|dll|pyc)|tags|png|jpeg|jpg)$',
 \ }
 
 " configure jedi-vim
