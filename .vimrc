@@ -110,7 +110,7 @@ let g:pymode_syntax_space_errors = g:pymode_syntax_all
 "let g:ctrlp_map = ',f'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 let g:ctrlp_custom_ignore = {
-    \ 'dir':  '\v([\/]\.(git|hg|svn)$|.+static\/dist|env|dist|build|bower_components|node_modules)',
+    \ 'dir': '\v([\/]\.(git|hg|svn)$|.+static\/dist|env|dist|build|bower_components|node_modules)',
     \ 'file': '\v(\.(exe|so|dll|pyc)|tags|png|jpeg|jpg)$',
 \ }
 
@@ -118,11 +118,18 @@ let g:ctrlp_custom_ignore = {
 let g:jedi#popup_on_dot = 0
 " configure ultisnips
 let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsListSnippets = "<c-s><c-s>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 let g:ScreenShellGnuScreenVerticalSupport = 'patch'
 
 let g:indent_guides_guide_size = 1
+let g:gist_browser_command = 'firefox %URL% &'
+
+let NERDTreeIgnore = ['\.pyc$']
+
+let delimitMate_expand_cr = 1
+let delimitMate_expand_space = 1
 
 au BufNewFile,BufRead *.html setlocal tabstop=2 shiftwidth=2 softtabstop=2
 augroup rst
@@ -151,6 +158,7 @@ nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 nnoremap & :&&<CR>
 xnoremap & :&&<CR>
 noremap <space> viw
+inoremap <C-j> <CR><CR><C-o>k<Tab>
 
 if filereadable(expand("$HOME/.vimrc.local"))
     source $HOME/.vimrc.local
