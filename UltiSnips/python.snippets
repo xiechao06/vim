@@ -24,6 +24,10 @@ class ${1:Foo}(db.Model):
 
 	def __unicode__(self):
 		return $2
+
+    def to_dict(self):
+        return dict((c.name, getattr(self, c.name)) for c
+                    in self.__mapper__.columns)
 endsnippet
 
 snippet sa:created
