@@ -48,7 +48,7 @@ Plugin 'thinca/vim-quickrun'
 Plugin 'danro/rename.vim'
 Plugin 'editorconfig/editorconfig'
 Plugin 'embear/vim-localvimrc'
-
+Plugin 'lepture/vim-jinja'
 
 call vundle#end()            " required
 " Pathogen load
@@ -169,3 +169,7 @@ if filereadable(expand(".vimrc.local"))
 endif
 
 iabbrev @@ xiechao06@gmail.com
+
+let g:NERDCustomDelimiters = {
+    \ 'jinja': { 'left': '<!--', 'right': '-->', 'leftAlt': '{#', 'rightAlt': '#}' },
+\ }
