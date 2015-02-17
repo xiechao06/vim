@@ -1,0 +1,30 @@
+snippet macro
+{% macro ${1:foo}(${2:arg1}) -%}
+$3
+{%- endmacro %}
+endsnippet
+
+snippet	if
+{% if ${1:cond} %}
+	$2
+{% endif %}
+endsnippet
+
+snippet iff
+{% if ${1:cond} %}
+	$2
+{% else %}
+	$3
+{% endif %}
+endsnippet
+
+snippet ifff
+{% if ${1:cond} %}
+	$2
+{% elif $(3:cond) %}
+	$4
+{% else %}
+	$5
+{% endif %}
+endsnippet
+
