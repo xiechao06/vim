@@ -48,7 +48,7 @@ Plugin 'thinca/vim-quickrun'
 Plugin 'danro/rename.vim'
 Plugin 'editorconfig/editorconfig'
 Plugin 'embear/vim-localvimrc'
-Plugin 'lepture/vim-jinja'
+Plugin 'Glench/Vim-Jinja2-Syntax'
 
 call vundle#end()            " required
 " Pathogen load
@@ -169,6 +169,8 @@ if filereadable(expand(".vimrc.local"))
 endif
 
 iabbrev @@ xiechao06@gmail.com
+
+au FileType jinja let b:match_words='<:>,<\@<=[ou]l\>[^>]*\%(>\|$\):<\@<=li\>:<\@<=/[ou]l>,<\@<=dl\>[^>]*\%(>\|$\):<\@<=d[td]\>:<\@<=/dl>,<\@<=\([^/][^ \t>]*\)[^>]*\%(>\|$\):<\@<=/\1>'
 
 let g:NERDCustomDelimiters = {
     \ 'jinja': { 'left': '<!--', 'right': '-->', 'leftAlt': '{#', 'rightAlt': '#}' },
