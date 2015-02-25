@@ -49,6 +49,8 @@ Plugin 'danro/rename.vim'
 Plugin 'editorconfig/editorconfig'
 Plugin 'embear/vim-localvimrc'
 Plugin 'mitsuhiko/vim-jinja'
+Plugin 'scrooloose/syntastic'
+Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()            " required
 " Pathogen load
@@ -173,3 +175,15 @@ iabbrev @@ xiechao06@gmail.com
 let g:NERDCustomDelimiters = {
     \ 'htmljinja': { 'left': '<!--', 'right': '-->', 'leftAlt': '{#', 'rightAlt': '#}' },
 \ }
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:ycm_key_list_select_completion=[]
+let g:ycm_key_list_previous_completion=[]
