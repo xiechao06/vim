@@ -115,6 +115,7 @@ let g:ctrlp_custom_ignore = {
     \ 'dir': '\v([\/]\.(git|hg|svn)$|.+static\/dist|env|dist|build|bower_components|node_modules)',
     \ 'file': '\v(\.(exe|so|dll|pyc)|tags|png|jpeg|jpg)$',
 \ }
+let g:ctrlp_max_height = 32 
 
 " configure jedi-vim
 let g:jedi#popup_on_dot = 0
@@ -142,6 +143,7 @@ augroup vimrc
     autocmd!
     au BufWritePost .vimrc :source ~/.vimrc
     au BufWritePost .vimrc.local :source ~/.vimrc.local
+    au BufWritePost .lvimrc :source .lvimrc
 augroup END
 au VimEnter * :source .Session.vim
 au VimLeave * :mksession! .Session.vim
@@ -152,6 +154,8 @@ autocmd BufNewFile,BufRead *md set filetype=markdown
 
 let mapleader=","
 noremap <Leader>e :vsplit ~/.vimrc.local<CR>
+noremap <Leader>E :vsplit ~/.vimrc<CR>
+noremap <Leader>le :vsplit .lvimrc<CR>
 noremap <Leader>p :e ~/.temp<CR>
 nnoremap <Leader>t :TagbarToggle<CR>
 nnoremap <Leader>n :NERDTreeToggle<CR>
