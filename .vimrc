@@ -51,6 +51,7 @@ Plugin 'embear/vim-localvimrc'
 Plugin 'mitsuhiko/vim-jinja'
 Plugin 'scrooloose/syntastic'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'Shougo/vimproc.vim'
 
 call vundle#end()            " required
 " Pathogen load
@@ -66,7 +67,7 @@ set guioptions-=R
 set guioptions-=l
 set guioptions-=L
 
-set guifont=Courier\ 10\ Pitch\ Bold\ 14
+set guifont=Courier\ 10\ Pitch\ Bold\ 13
 set nocompatible
 set hlsearch softtabstop=4 tabstop=4 shiftwidth=4 expandtab
 set autoindent
@@ -77,7 +78,6 @@ noremap \ ,
 syntax enable
 set background=dark
 colorscheme solarized
-set cc=78
 set ruler
 set fileencoding=utf-8
 set encoding=utf-8
@@ -191,3 +191,5 @@ let g:syntastic_check_on_wq = 0
 
 let g:ycm_key_list_select_completion=[]
 let g:ycm_key_list_previous_completion=[]
+
+let g:localvimrc_ask=0
