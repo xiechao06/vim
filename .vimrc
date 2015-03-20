@@ -50,7 +50,7 @@ Plugin 'editorconfig/editorconfig'
 Plugin 'embear/vim-localvimrc'
 Plugin 'mitsuhiko/vim-jinja'
 Plugin 'scrooloose/syntastic'
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 Plugin 'Shougo/vimproc.vim'
 
 call vundle#end()            " required
@@ -82,7 +82,7 @@ set ruler
 set fileencoding=utf-8
 set encoding=utf-8
 set incsearch
-set number
+"set number
 
 " configure solarized, see
 " https://github.com/Anthony24/gnome-terminal-colors-solarized
