@@ -25,8 +25,9 @@ class ${1:Foo}(db.Model):
 	def __unicode__(self):
 		return $2
 
-    def to_dict(self):
-        return dict((c.name, getattr(self, c.name)) for c
+    def to_dict(self, camel_case=False):
+        ret = dict((c.name, getattr(self, c.name)) for c
+        return to_camel_case(ret) if camel_case else ret
                     in self.__mapper__.columns)
 endsnippet
 
