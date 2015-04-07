@@ -50,8 +50,8 @@ Plugin 'editorconfig/editorconfig'
 Plugin 'embear/vim-localvimrc'
 Plugin 'mitsuhiko/vim-jinja'
 Plugin 'scrooloose/syntastic'
-"Plugin 'Valloric/YouCompleteMe'
 Plugin 'Shougo/vimproc.vim'
+Plugin 'terryma/vim-multiple-cursors'
 
 call vundle#end()            " required
 " Pathogen load
@@ -191,5 +191,4 @@ let g:syntastic_check_on_wq = 0
 
 let g:ycm_key_list_select_completion=[]
 let g:ycm_key_list_previous_completion=[]
-
 let g:localvimrc_ask=0

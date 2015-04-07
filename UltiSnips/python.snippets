@@ -82,3 +82,11 @@ snippet flask:bp
 $1_bp = Blueprint('$1', __name__, static_folder='static',
                         template_folder='templates')
 endsnippet
+
+snippet sa:table
+$1_table = db.Table('TB_${1/.*/\U$0\E/g}', db.Model.metadata,
+					db.Column('$2', db.Integer,
+							  db.ForeignKey('TB_${2/(.*)_id/\U$1\E/}.id')),
+					db.Column('$3', db.Integer,
+							  db.ForeignKey('TB_${3/(.*)_id/\U$1\E/}.id')))
+endsnippet
