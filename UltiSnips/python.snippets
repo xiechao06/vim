@@ -13,7 +13,7 @@ endsnippet
 
 snippet sa:fk
 $1_id = db.Column(db.Integer, db.ForeignKey('TB_${1/.*/\U$0\E/g}.id'))
-$1 = db.relationship("${1/.*/\u$0/g}", backfref='${2:foo_list}')
+$1 = db.relationship("${1/.*/\u$0/g}", backref='${2:foo_list}')
 endsnippet
 
 snippet sa:model
