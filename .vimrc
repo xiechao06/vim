@@ -192,3 +192,16 @@ let g:syntastic_check_on_wq = 0
 let g:ycm_key_list_select_completion=[]
 let g:ycm_key_list_previous_completion=[]
 let g:localvimrc_ask=0
+
+map <m-1> 1gt
+map <m-2> 2gt
+map <m-3> 3gt
+map <m-4> 4gt
+map <m-5> 5gt
+imap <m-1> 1gt
+imap <m-2> 2gt
+imap <m-3> 3gt
+imap <m-4> 4gt
+imap <m-5> 5gt
+
+autocmd BufWritePost,FileWritePost *.py !ctags {.,**}/*.py
