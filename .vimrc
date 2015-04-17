@@ -52,6 +52,7 @@ Plugin 'mitsuhiko/vim-jinja'
 Plugin 'scrooloose/syntastic'
 Plugin 'Shougo/vimproc.vim'
 Plugin 'terryma/vim-multiple-cursors'
+Plugin 'mxw/vim-jsx'
 
 call vundle#end()            " required
 " Pathogen load
@@ -204,4 +205,4 @@ imap <m-3> 3gt
 imap <m-4> 4gt
 imap <m-5> 5gt
 
-autocmd BufWritePost,FileWritePost *.py !ctags {.,**}/*.py
+let g:syntastic_javascript_checkers = ['jsxhint']
