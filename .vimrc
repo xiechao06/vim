@@ -53,6 +53,8 @@ Plugin 'scrooloose/syntastic'
 Plugin 'Shougo/vimproc.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'mxw/vim-jsx'
+Plugin 'michaeljsmith/vim-indent-object'
+Plugin 'argtextobj.vim'
 
 call vundle#end()            " required
 " Pathogen load
@@ -68,7 +70,8 @@ set guioptions-=R
 set guioptions-=l
 set guioptions-=L
 
-set guifont=Courier\ 10\ Pitch\ Bold\ 13
+"set guifont=Courier\ 10\ Pitch\ Bold\ 13
+set guifont=Droid\ Sans\ Mono\ 15
 set nocompatible
 set hlsearch softtabstop=4 tabstop=4 shiftwidth=4 expandtab
 set autoindent
