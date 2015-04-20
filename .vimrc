@@ -209,3 +209,5 @@ imap <m-4> 4gt
 imap <m-5> 5gt
 
 let g:syntastic_javascript_checkers = ['jsxhint']
+nmap tm :tabedit %<CR>:tabmove -1<CR><c-l>
+nmap td :tabclose<CR>
