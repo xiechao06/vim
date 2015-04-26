@@ -197,17 +197,21 @@ let g:ycm_key_list_select_completion=[]
 let g:ycm_key_list_previous_completion=[]
 let g:localvimrc_ask=0
 
-map <m-1> 1gt
-map <m-2> 2gt
-map <m-3> 3gt
-map <m-4> 4gt
-map <m-5> 5gt
-imap <m-1> 1gt
-imap <m-2> 2gt
-imap <m-3> 3gt
-imap <m-4> 4gt
-imap <m-5> 5gt
+no <m-1> 1gt
+no <m-2> 2gt
+no <m-3> 3gt
+no <m-4> 4gt
+no <m-5> 5gt
+ino <m-1> <esc>1gt
+ino <m-2> <esc>2gt
+ino <m-3> <esc>3gt
+ino <m-4> <esc>4gt
+ino <m-5> <esc>5gt
 
 let g:syntastic_javascript_checkers = ['jsxhint']
 nmap tm :tabedit %<CR>:tabmove -1<CR><c-l>
 nmap td :tabclose<CR>
+if has('persistent_undo')      "check if your vim version supports it
+  set undofile                 "turn on the feature  
+  set undodir=$HOME/.vim/undo  "directory where the undo files will be stored
+  endif     
