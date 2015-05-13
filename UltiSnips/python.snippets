@@ -54,12 +54,14 @@ snippet script
 #!/usr/bin/env python
 # encoding: utf-8
 """
+SYNOPSIS:
+	${1}
 Usage:
-	${1:script_name}.py [OPTIONS]
+	${2:script_name}.py [OPTIONS]
 OPTIONS:
 	-h
 		show this help
-	-${2:x}
+	-${3:x}
 """
 import sys
 import getopt
