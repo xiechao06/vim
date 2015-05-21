@@ -55,6 +55,7 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'mxw/vim-jsx'
 Plugin 'michaeljsmith/vim-indent-object'
 Plugin 'argtextobj.vim'
+Plugin 'roalddevries/yaml.vim'
 
 call vundle#end()            " required
 " Pathogen load
@@ -215,3 +216,9 @@ if has('persistent_undo')      "check if your vim version supports it
   set undofile                 "turn on the feature  
   set undodir=$HOME/.vim/undo  "directory where the undo files will be stored
   endif     
+
+set foldmethod=syntax
+set foldlevelstart=1
+let javascript_fold=1
+
+au BufEnter swagger.yml setlocal foldmethod=indent foldlevelstart=2
