@@ -81,7 +81,8 @@ let mapleader=","
 noremap \ ,
 syntax enable
 set background=dark
-colorscheme solarized
+"colorscheme solarized
+colorscheme molokai
 set ruler
 set fileencoding=utf-8
 set encoding=utf-8
