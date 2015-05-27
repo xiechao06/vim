@@ -140,6 +140,7 @@ let delimitMate_expand_cr = 1
 let delimitMate_expand_space = 1
 
 au BufNewFile,BufRead *.html setlocal tabstop=2 shiftwidth=2 softtabstop=2
+au filetype html setlocal tabstop=2 shiftwidth=2 softtabstop=2
 augroup rst
     autocmd!
     au BufNewFile,BufRead *.rst setlocal tabstop=3 shiftwidth=3 softtabstop=2
