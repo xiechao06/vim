@@ -82,7 +82,8 @@ let mapleader=","
 noremap \ ,
 syntax enable
 set background=dark
-colorscheme solarized
+"colorscheme solarized
+colorscheme molokai
 set ruler
 set fileencoding=utf-8
 set encoding=utf-8
@@ -210,7 +211,7 @@ ino <m-3> <esc>3gt
 ino <m-4> <esc>4gt
 ino <m-5> <esc>5gt
 
-let g:syntastic_javascript_checkers = ['jsxhint']
+let g:syntastic_javascript_checkers = ['jshint']
 nmap tm :tabedit %<CR>:tabmove -1<CR><c-l>
 nmap td :tabclose<CR>
 if has('persistent_undo')      "check if your vim version supports it
