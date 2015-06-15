@@ -56,6 +56,8 @@ Plugin 'mxw/vim-jsx'
 Plugin 'michaeljsmith/vim-indent-object'
 Plugin 'argtextobj.vim'
 Plugin 'roalddevries/yaml.vim'
+Plugin 'rosenfeld/conque-term'
+Plugin 'drmikehenry/vim-fontsize'
 
 call vundle#end()            " required
 " Pathogen load
@@ -224,3 +226,4 @@ set foldlevelstart=1
 let javascript_fold=1
 
 au BufEnter swagger.yml setlocal foldmethod=indent foldlevelstart=2
+au BufEnter *.py setlocal nonu
