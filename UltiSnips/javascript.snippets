@@ -24,3 +24,60 @@ endsnippet
 snippet r
 require($1);
 endsnippet
+
+snippet	swal "swal compact mode"
+swal({
+	type: '$1',
+	title: '$2',
+	text: '$3'
+});
+endsnippet
+
+snippet	swal "swal full mode"
+swal({
+	type: '$1',
+	title: '$2',
+	text: '$3'
+	showCancelButton: true,
+}, function (confirmed) {
+	$4
+});
+endsnippet
+
+snippet	f 
+function ($1) {
+	$2
+}
+endsnippet
+
+snippet ajax "send json compact mode"
+$.ajax({
+	url: '$1',
+	type: '${2:POST}',
+	data: JSON.stringify($3),
+	contentType: 'application/json; charset=UTF-8',
+	dataType: 'json',  // if the format of response should be json
+}).done(function (data, textStatus, jqXHR) {
+	$4
+});
+endsnippet
+
+snippet ajax "send json fully mode"
+$.ajax({
+	url: '$1',
+	type: '${2:POST}',
+	data: JSON.stringify($3),
+	contentType: 'application/json; charset=UTF-8',
+	dataType: 'json',  // if the format of response should be json
+}).done(function (data, textStatus, jqXHR) {
+	$4
+}).fail(function (jqXHR, textStatus, errorThrown) {
+	$5
+}).always(function () {
+	$6
+});
+endsnippet
+
+snippet req "require a module" 
+var $1 = require('$1');
+endsnippet

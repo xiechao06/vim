@@ -22,8 +22,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdcommenter'
 "Plugin 'davidhalter/jedi-vim'
 Plugin 'maksimr/vim-jsbeautify'
-"Plugin 'hallettj/jslint.vim'
-"Plugin 'marijnh/tern_for_vim'
+Plugin 'marijnh/tern_for_vim'
 Plugin 'Raimondi/delimitMate'
 Plugin 'alfredodeza/pytest.vim'
 Plugin 'SirVer/ultisnips'
@@ -58,6 +57,7 @@ Plugin 'argtextobj.vim'
 Plugin 'roalddevries/yaml.vim'
 Plugin 'rosenfeld/conque-term'
 Plugin 'drmikehenry/vim-fontsize'
+Plugin 'editorconfig/editorconfig-vim'
 
 call vundle#end()            " required
 " Pathogen load
@@ -227,3 +227,8 @@ let javascript_fold=1
 
 au BufEnter swagger.yml setlocal foldmethod=indent foldlevelstart=2
 au BufEnter *.py setlocal nonu
+
+let g:EditorConfig_exclude_patterns = ['fugitive://.*']
+
+ino <c-enter> <esc>o
+ino <c-s-enter> <esc>O
