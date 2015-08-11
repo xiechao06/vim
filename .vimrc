@@ -58,6 +58,8 @@ Plugin 'roalddevries/yaml.vim'
 Plugin 'rosenfeld/conque-term'
 Plugin 'drmikehenry/vim-fontsize'
 Plugin 'editorconfig/editorconfig-vim'
+Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'ap/vim-css-color'
 
 call vundle#end()            " required
 " Pathogen load
