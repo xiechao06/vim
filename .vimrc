@@ -234,3 +234,7 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
 ino <c-enter> <esc>o
 ino <c-s-enter> <esc>O
+
+let g:syntastic_mode_map = {
+    \ "mode": "active",
+    \ "passive_filetypes": ["python"] }
