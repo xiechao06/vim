@@ -144,7 +144,7 @@ let NERDTreeIgnore = ['\.pyc$']
 let delimitMate_expand_cr = 1
 let delimitMate_expand_space = 1
 
-au BufNewFile,BufRead *.html setlocal tabstop=2 shiftwidth=2 softtabstop=2
+au BufNewFile,BufRead,BufEnter *.html setlocal tabstop=2 shiftwidth=2 softtabstop=2
 au filetype html setlocal tabstop=2 shiftwidth=2 softtabstop=2
 augroup rst
     autocmd!
@@ -215,7 +215,7 @@ ino <m-3> <esc>3gt
 ino <m-4> <esc>4gt
 ino <m-5> <esc>5gt
 
-let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_javascript_checkers = ['jsxhint']
 nmap tm :tabedit %<CR>:tabmove -1<CR><c-l>
 nmap td :tabclose<CR>
 if has('persistent_undo')      "check if your vim version supports it
