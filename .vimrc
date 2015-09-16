@@ -60,6 +60,7 @@ Plugin 'drmikehenry/vim-fontsize'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'ap/vim-css-color'
+Plugin 'cakebaker/scss-syntax.vim'
 
 call vundle#end()            " required
 " Pathogen load
@@ -145,6 +146,8 @@ let delimitMate_expand_cr = 1
 let delimitMate_expand_space = 1
 
 au BufNewFile,BufRead,BufEnter *.html setlocal tabstop=2 shiftwidth=2 softtabstop=2
+au BufNewFile,BufRead,BufEnter *.tag setlocal ft=html 
+au BufNewFile,BufRead,BufEnter *.tag :UltiSnipsAddFiletypes html.javascript
 au filetype html setlocal tabstop=2 shiftwidth=2 softtabstop=2
 augroup rst
     autocmd!
