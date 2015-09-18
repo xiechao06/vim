@@ -61,6 +61,7 @@ Plugin 'editorconfig/editorconfig-vim'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'ap/vim-css-color'
 Plugin 'cakebaker/scss-syntax.vim'
+"Plugin 'othree/yajs.vim'
 
 call vundle#end()            " required
 " Pathogen load
