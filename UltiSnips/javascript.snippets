@@ -97,6 +97,25 @@ snippet v "define varialble" b
 var $1 = ${2:null};
 endsnippet
 
-snippet export "Description" b
+snippet export "module exports" b
 module.exports = $1;
+endsnippet
+
+snippet script "a script skeleton" b
+#! /usr/bin/env node
+var __doc__ = \`
+	${1:beautiful help}
+\`
+
+if (require.main === module) {
+
+	var myArgs = require('optimist').args;
+
+	if ((myArgs.h)||(myArgs.help)) {
+		console.log(__doc__);
+		process.exit(1);
+	}
+	
+	$2
+}
 endsnippet

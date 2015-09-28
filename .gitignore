@@ -1,4 +1,1 @@
-bundle/
-.Session.vim
-gnome-terminal-colors-solarized/
-*.sw[p|o]
+node_modules/
