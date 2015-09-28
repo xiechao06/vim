@@ -17,6 +17,14 @@ snippet l
 console.log($1);
 endsnippet
 
+snippet e
+console.error($1);
+endsnippet
+
+snippet dir
+console.dir($1);
+endsnippet
+
 snippet vr
 var $1 = require($2);
 endsnippet
@@ -83,4 +91,12 @@ snippet f* "generator"
 function *($1) {
 	$2	
 }
+endsnippet
+
+snippet v "define varialble" b
+var $1 = ${2:null};
+endsnippet
+
+snippet export "Description" b
+module.exports = $1;
 endsnippet
