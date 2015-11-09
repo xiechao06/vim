@@ -61,7 +61,7 @@ Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'ap/vim-css-color'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'tpope/vim-commentary'
-"Plugin 'othree/yajs.vim'
+Plugin 'benmills/vimux'
 
 call vundle#end()            " required
 " Pathogen load
@@ -78,7 +78,7 @@ set guioptions-=l
 set guioptions-=L
 
 "set guifont=Courier\ 10\ Pitch\ Bold\ 13
-set guifont=Droid\ Sans\ Mono\ 15
+set guifont=Droid\ Sans\ Mono\ 16 
 set nocompatible
 set hlsearch softtabstop=4 tabstop=4 shiftwidth=4 expandtab
 set autoindent
@@ -161,8 +161,8 @@ augroup vimrc
     au BufWritePost .lvimrc :source .lvimrc
 augroup END
 
-au VimEnter * :source .Session.vim
-au VimLeave * :mksession! .Session.vim
+au VimEnter * :source Session.vim
+au VimLeave * :mksession! Session.vim
 au BufNewFile,BufRead *.hbs :set filetype=html
 au BufNewFile,BufRead *.hbs setlocal tabstop=2 shiftwidth=2
 au BufNewFile,BufRead *.hbs setlocal tabstop=2 shiftwidth=2
