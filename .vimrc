@@ -62,6 +62,7 @@ Plugin 'ap/vim-css-color'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'tpope/vim-commentary'
 Plugin 'benmills/vimux'
+Plugin 'briancollins/vim-jst'
 
 call vundle#end()            " required
 " Pathogen load
@@ -243,3 +244,7 @@ ino <c-s-enter> <esc>O
 let g:syntastic_mode_map = {
     \ "mode": "active",
     \ "passive_filetypes": ["python"] }
+
+
+" https://github.com/webpack/webpack/issues/781 
+set backupcopy=yes
