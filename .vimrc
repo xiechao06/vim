@@ -63,6 +63,7 @@ Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'tpope/vim-commentary'
 Plugin 'benmills/vimux'
 Plugin 'briancollins/vim-jst'
+Plugin 'hail2u/vim-css3-syntax'
 
 call vundle#end()            " required
 " Pathogen load
@@ -222,6 +223,7 @@ ino <m-4> <esc>4gt
 ino <m-5> <esc>5gt
 
 let g:syntastic_javascript_checkers = ['jsxhint']
+let g:syntastic_sass_checkers = ['stylint']
 nmap tm :tabedit %<CR>:tabmove -1<CR><c-l>
 nmap td :tabclose<CR>
 if has('persistent_undo')      "check if your vim version supports it
@@ -238,13 +240,15 @@ au BufEnter *.py setlocal nonu
 
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
-ino <c-enter> <esc>o
+ino <c-enter> <enter><esc>O
 ino <c-s-enter> <esc>O
 
 let g:syntastic_mode_map = {
     \ "mode": "active",
-    \ "passive_filetypes": ["python"] }
+    \ "passive_filetypes": ["python", "css"] }
 
 
 " https://github.com/webpack/webpack/issues/781 
 set backupcopy=yes
+" http://stackoverflow.com/questions/21608480/gulp-js-watch-task-runs-twice-when-saving-files
+set nowritebackup
