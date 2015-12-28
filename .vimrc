@@ -78,11 +78,15 @@ set guioptions-=r
 set guioptions-=R
 set guioptions-=l
 set guioptions-=L
-
+set lazyredraw  
 "set guifont=Courier\ 10\ Pitch\ Bold\ 13
 set guifont=Droid\ Sans\ Mono\ 16 
 set nocompatible
-set hlsearch softtabstop=4 tabstop=4 shiftwidth=4 expandtab
+set hlsearch 
+set softtabstop=4 
+set tabstop=4 
+set shiftwidth=4 
+set expandtab
 set autoindent
 set smartcase
 filetype plugin on
@@ -90,13 +94,11 @@ let mapleader=","
 noremap \ ,
 syntax enable
 set background=dark
-" colorscheme molokai
-colorscheme badwolf
+colorscheme molokai
 set ruler
 set fileencoding=utf-8
 set encoding=utf-8
 set incsearch
-set cursorline
 set number
 
 " configure solarized, see
@@ -151,10 +153,8 @@ let NERDTreeIgnore = ['\.pyc$']
 let delimitMate_expand_cr = 1
 let delimitMate_expand_space = 1
 
-au BufNewFile,BufRead,BufEnter *.html setlocal tabstop=2 shiftwidth=2 softtabstop=2
-au BufNewFile,BufRead,BufEnter *.tag setlocal ft=html
-au BufNewFile,BufRead,BufEnter *.tag :UltiSnipsAddFiletypes html.javascript
-au filetype html setlocal tabstop=2 shiftwidth=2 softtabstop=2
+au BufNewFile,BufNew,BufRead *.tag setlocal filetype=html 
+
 augroup rst
     autocmd!
     au BufNewFile,BufRead *.rst setlocal tabstop=3 shiftwidth=3 softtabstop=2
