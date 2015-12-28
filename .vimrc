@@ -90,13 +90,14 @@ let mapleader=","
 noremap \ ,
 syntax enable
 set background=dark
-"colorscheme solarized
-colorscheme molokai
+" colorscheme molokai
+colorscheme badwolf
 set ruler
 set fileencoding=utf-8
 set encoding=utf-8
 set incsearch
-"set number
+set cursorline
+set number
 
 " configure solarized, see
 " https://github.com/Anthony24/gnome-terminal-colors-solarized
@@ -125,11 +126,13 @@ let g:pymode_syntax_space_errors = g:pymode_syntax_all
 " configure ctrlp
 "let g:ctrlp_map = ',f'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+let g:ctrlp_match_window = 'bottom,order:ttb'
 let g:ctrlp_custom_ignore = {
     \ 'dir': '\v([\/]\.(git|hg|svn)$|.+static\/dist|env|dist|build|bower_components|node_modules)',
     \ 'file': '\v(\.(exe|so|dll|pyc)|tags|png|jpeg|jpg)$',
 \ }
 let g:ctrlp_max_height = 32 
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
 " configure jedi-vim
 let g:jedi#popup_on_dot = 0
