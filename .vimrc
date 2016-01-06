@@ -255,3 +255,5 @@ let g:syntastic_mode_map = {
 set backupcopy=yes
 " http://stackoverflow.com/questions/21608480/gulp-js-watch-task-runs-twice-when-saving-files
 set nowritebackup
+
+map <silent> <F11> :call system("wmctrl -ir " . v:windowid . " -b toggle,fullscreen")<CR>
