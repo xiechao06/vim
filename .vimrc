@@ -64,6 +64,7 @@ Plugin 'tpope/vim-commentary'
 Plugin 'benmills/vimux'
 Plugin 'briancollins/vim-jst'
 Plugin 'hail2u/vim-css3-syntax'
+Plugin 'tfnico/vim-gradle'
 
 call vundle#end()            " required
 " Pathogen load
