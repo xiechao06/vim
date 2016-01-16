@@ -64,6 +64,7 @@ Plugin 'tpope/vim-commentary'
 Plugin 'benmills/vimux'
 Plugin 'briancollins/vim-jst'
 Plugin 'hail2u/vim-css3-syntax'
+Plugin 'tfnico/vim-gradle'
 
 call vundle#end()            " required
 " Pathogen load
@@ -225,7 +226,7 @@ ino <m-3> <esc>3gt
 ino <m-4> <esc>4gt
 ino <m-5> <esc>5gt
 
-let g:syntastic_javascript_checkers = ['jsxhint']
+let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_sass_checkers = ['stylint']
 nmap tm :tabedit %<CR>:tabmove -1<CR><c-l>
 nmap td :tabclose<CR>
