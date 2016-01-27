@@ -226,7 +226,7 @@ ino <m-3> <esc>3gt
 ino <m-4> <esc>4gt
 ino <m-5> <esc>5gt
 
-let g:syntastic_javascript_checkers = ['jsxhint']
+let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_sass_checkers = ['stylint']
 nmap tm :tabedit %<CR>:tabmove -1<CR><c-l>
 nmap td :tabclose<CR>
@@ -249,7 +249,7 @@ ino <c-s-enter> <esc>O
 
 let g:syntastic_mode_map = {
     \ "mode": "active",
-    \ "passive_filetypes": ["python", "css"] }
+    \ "passive_filetypes": ["python", "css", "java"] }
 
 
 " https://github.com/webpack/webpack/issues/781 
