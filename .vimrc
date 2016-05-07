@@ -65,6 +65,7 @@ Plugin 'benmills/vimux'
 Plugin 'briancollins/vim-jst'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'tfnico/vim-gradle'
+Plugin 'suan/vim-instant-markdown'
 
 call vundle#end()            " required
 " Pathogen load
@@ -114,7 +115,7 @@ let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#branch#empty_message = ''
 " configure python-mode
 let g:pymode = 1
-let g:pymode_python = 'python'
+let g:pymode_python = 'python3'
 let g:pymode_virtualenv = 1
 let g:pymode_rope = 0
 "Linting
@@ -128,7 +129,7 @@ let g:pymode_syntax_indent_errors = g:pymode_syntax_all
 let g:pymode_syntax_space_errors = g:pymode_syntax_all
 " configure ctrlp
 "let g:ctrlp_map = ',f'
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*     " MacOSX/Linux
 let g:ctrlp_match_window = 'bottom,order:ttb'
 let g:ctrlp_custom_ignore = {
     \ 'dir': '\v([\/]\.(git|hg|svn)$|.+static\/dist|env|dist|build|bower_components|node_modules)',
@@ -140,8 +141,10 @@ let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclu
 " configure jedi-vim
 let g:jedi#popup_on_dot = 0
 " configure ultisnips
+let g:UltiSnipsUsePythonVersion = 3
 let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsListSnippets = "<c-s><c-s>"
+let g:UltiSnipsListSnippets="<c-s><c-s>"
+
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 let g:ScreenShellGnuScreenVerticalSupport = 'patch'
