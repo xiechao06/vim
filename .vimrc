@@ -9,7 +9,6 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 
-Plugin 'jpalardy/vim-slime'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'mattn/emmet-vim'
 Plugin 'klen/python-mode'
@@ -26,11 +25,9 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'alfredodeza/pytest.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
-Plugin 'pangloss/vim-javascript'
 Plugin 'thinca/vim-visualstar'
 Plugin 'tpope/vim-repeat'
 Plugin 'kien/rainbow_parentheses.vim'
-Plugin 'kovisoft/slimv'
 Plugin 'gregsexton/MatchTag'
 Plugin 'mattn/gist-vim'
 Plugin 'mattn/webapi-vim'
@@ -66,6 +63,12 @@ Plugin 'briancollins/vim-jst'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'tfnico/vim-gradle'
 Plugin 'suan/vim-instant-markdown'
+Plugin 'gkz/vim-ls'
+Plugin 'isRuslan/vim-es6'
+Plugin 'guns/vim-sexp'
+Plugin 'tpope/vim-sexp-mappings-for-regular-people'
+Plugin 'tpope/vim-fireplace'
+
 
 call vundle#end()            " required
 " Pathogen load
@@ -81,8 +84,7 @@ set guioptions-=R
 set guioptions-=l
 set guioptions-=L
 set lazyredraw  
-"set guifont=Courier\ 10\ Pitch\ Bold\ 13
-set guifont=Droid\ Sans\ Mono\ 16 
+set guifont=Courier\ 10\ Pitch\ Bold\ 15
 set nocompatible
 set hlsearch 
 set softtabstop=4 
