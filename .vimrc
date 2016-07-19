@@ -131,7 +131,7 @@ let g:pymode_syntax_indent_errors = g:pymode_syntax_all
 let g:pymode_syntax_space_errors = g:pymode_syntax_all
 " configure ctrlp
 "let g:ctrlp_map = ',f'
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*     " MacOSX/Linux
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 let g:ctrlp_match_window = 'bottom,order:ttb'
 let g:ctrlp_custom_ignore = {
     \ 'dir': '\v([\/]\.(git|hg|svn)$|.+static\/dist|env|dist|build|bower_components|node_modules)',
@@ -176,7 +176,8 @@ au VimEnter * :source Session.vim
 au VimLeave * :mksession! Session.vim
 au BufNewFile,BufRead *.hbs :set filetype=html
 au BufNewFile,BufRead *.hbs setlocal tabstop=2 shiftwidth=2
-au BufNewFile,BufRead *.hbs setlocal tabstop=2 shiftwidth=2
+au BufNewFile,BufRead *.js setlocal tabstop=2 shiftwidth=2 softtabstop=2
+au BufNewFile,BufRead *.ejs setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd BufNewFile,BufRead *md set filetype=markdown
 
 let mapleader=","
@@ -263,3 +264,5 @@ set backupcopy=yes
 set nowritebackup
 
 map <silent> <F11> :call system("wmctrl -ir " . v:windowid . " -b toggle,fullscreen")<CR>
+
+
