@@ -51,7 +51,6 @@ Plugin 'mxw/vim-jsx'
 Plugin 'michaeljsmith/vim-indent-object'
 Plugin 'argtextobj.vim'
 Plugin 'roalddevries/yaml.vim'
-Plugin 'rosenfeld/conque-term'
 Plugin 'drmikehenry/vim-fontsize'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'mustache/vim-mustache-handlebars'
@@ -265,4 +264,5 @@ set nowritebackup
 
 map <silent> <F11> :call system("wmctrl -ir " . v:windowid . " -b toggle,fullscreen")<CR>
 
-
+let g:sexp_enable_insert_mode_mappings = 0
+let g:jsx_ext_required = 0
