@@ -102,7 +102,6 @@ set ruler
 set fileencoding=utf-8
 set encoding=utf-8
 set incsearch
-set number
 
 " configure solarized, see
 " https://github.com/Anthony24/gnome-terminal-colors-solarized
