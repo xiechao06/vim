@@ -68,6 +68,7 @@ Plugin 'guns/vim-sexp'
 Plugin 'tpope/vim-sexp-mappings-for-regular-people'
 Plugin 'tpope/vim-fireplace'
 Plugin 'ternjs/tern_for_vim'
+Plug 'rstacruz/vim-hyperstyle'
 
 
 call vundle#end()            " required
@@ -103,7 +104,6 @@ set ruler
 set fileencoding=utf-8
 set encoding=utf-8
 set incsearch
-set number
 
 " configure solarized, see
 " https://github.com/Anthony24/gnome-terminal-colors-solarized
