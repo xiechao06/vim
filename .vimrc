@@ -67,6 +67,7 @@ Plugin 'isRuslan/vim-es6'
 Plugin 'guns/vim-sexp'
 Plugin 'tpope/vim-sexp-mappings-for-regular-people'
 Plugin 'tpope/vim-fireplace'
+Plugin 'ternjs/tern_for_vim'
 
 
 call vundle#end()            " required
