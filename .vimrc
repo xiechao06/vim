@@ -47,7 +47,7 @@ Plugin 'mitsuhiko/vim-jinja'
 Plugin 'scrooloose/syntastic'
 Plugin 'Shougo/vimproc.vim'
 Plugin 'terryma/vim-multiple-cursors'
-Plugin 'mxw/vim-jsx'
+" Plugin 'mxw/vim-jsx'
 Plugin 'michaeljsmith/vim-indent-object'
 Plugin 'argtextobj.vim'
 Plugin 'roalddevries/yaml.vim'
@@ -58,7 +58,7 @@ Plugin 'ap/vim-css-color'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'tpope/vim-commentary'
 Plugin 'benmills/vimux'
-Plugin 'briancollins/vim-jst'
+" Plugin 'briancollins/vim-jst'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'tfnico/vim-gradle'
 Plugin 'suan/vim-instant-markdown'
@@ -67,6 +67,8 @@ Plugin 'isRuslan/vim-es6'
 Plugin 'guns/vim-sexp'
 Plugin 'tpope/vim-sexp-mappings-for-regular-people'
 Plugin 'tpope/vim-fireplace'
+Plugin 'ternjs/tern_for_vim'
+Plugin 'othree/yajs.vim'
 
 
 call vundle#end()            " required
@@ -102,7 +104,6 @@ set ruler
 set fileencoding=utf-8
 set encoding=utf-8
 set incsearch
-set number
 
 " configure solarized, see
 " https://github.com/Anthony24/gnome-terminal-colors-solarized
@@ -177,7 +178,8 @@ au VimEnter * :source Session.vim
 au VimLeave * :mksession! Session.vim
 au BufNewFile,BufRead *.hbs :set filetype=html
 au BufNewFile,BufRead *.hbs setlocal tabstop=2 shiftwidth=2
-au BufNewFile,BufRead *.hbs setlocal tabstop=2 shiftwidth=2
+au BufNewFile,BufRead *.js setlocal tabstop=2 shiftwidth=2 softtabstop=2
+au BufNewFile,BufRead *.ejs setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd BufNewFile,BufRead *md set filetype=markdown
 
 let mapleader=","
