@@ -83,7 +83,7 @@ set guioptions-=R
 set guioptions-=l
 set guioptions-=L
 set lazyredraw  
-set guifont=Courier\ 10\ Pitch\ Bold\ 15
+set guifont=Source\ Code\ Pro\ 16
 set nocompatible
 set hlsearch 
 set softtabstop=4 
@@ -130,7 +130,7 @@ let g:pymode_syntax_indent_errors = g:pymode_syntax_all
 let g:pymode_syntax_space_errors = g:pymode_syntax_all
 " configure ctrlp
 "let g:ctrlp_map = ',f'
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*/node_modules/*     " MacOSX/Linux
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 let g:ctrlp_match_window = 'bottom,order:ttb'
 let g:ctrlp_custom_ignore = {
     \ 'dir': '\v([\/]\.(git|hg|svn)$|.+static\/dist|env|dist|build|bower_components|node_modules)',
@@ -170,6 +170,8 @@ augroup vimrc
     au BufWritePost .vimrc.local :source ~/.vimrc.local
     au BufWritePost .lvimrc :source .lvimrc
 augroup END
+
+au BufNewFile,BufRead *.js setlocal tabstop=2 shiftwidth=2 softtabstop=2
 
 au VimEnter * :source Session.vim
 au VimLeave * :mksession! Session.vim
@@ -264,3 +266,4 @@ set nowritebackup
 map <silent> <F11> :call system("wmctrl -ir " . v:windowid . " -b toggle,fullscreen")<CR>
 
 let g:sexp_enable_insert_mode_mappings = 0
+let g:jsx_ext_required = 0
