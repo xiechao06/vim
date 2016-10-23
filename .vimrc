@@ -69,6 +69,7 @@ Plugin 'tpope/vim-sexp-mappings-for-regular-people'
 Plugin 'tpope/vim-fireplace'
 Plugin 'ternjs/tern_for_vim'
 Plugin 'othree/yajs.vim'
+Plugin 'terryma/vim-expand-region'
 
 
 call vundle#end()            " required
