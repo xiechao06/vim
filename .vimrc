@@ -70,6 +70,8 @@ Plugin 'tpope/vim-fireplace'
 Plugin 'ternjs/tern_for_vim'
 Plugin 'othree/yajs.vim'
 Plugin 'terryma/vim-expand-region'
+Plugin 'gavocanov/vim-js-indent'
+Plugin 'dyng/ctrlsf.vim'
 
 
 call vundle#end()            " required
@@ -79,6 +81,7 @@ filetype plugin indent on
 
 runtime macros/matchit.vim
 
+set nu
 set guioptions-=m
 set guioptions-=T
 set guioptions-=r
@@ -105,6 +108,7 @@ set ruler
 set fileencoding=utf-8
 set encoding=utf-8
 set incsearch
+set colorcolumn=80
 
 " configure solarized, see
 " https://github.com/Anthony24/gnome-terminal-colors-solarized
