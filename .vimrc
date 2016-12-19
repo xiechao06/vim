@@ -70,6 +70,9 @@ Plugin 'tpope/vim-fireplace'
 Plugin 'ternjs/tern_for_vim'
 Plugin 'othree/yajs.vim'
 Plugin 'tpope/vim-sensible'
+Plugin 'terryma/vim-expand-region'
+Plugin 'gavocanov/vim-js-indent'
+Plugin 'dyng/ctrlsf.vim'
 
 
 call vundle#end()            " required
@@ -79,6 +82,7 @@ filetype plugin indent on
 
 runtime macros/matchit.vim
 
+set nu
 set guioptions-=m
 set guioptions-=T
 set guioptions-=r
@@ -86,7 +90,7 @@ set guioptions-=R
 set guioptions-=l
 set guioptions-=L
 set lazyredraw  
-set guifont=Courier\ 10\ Pitch\ Bold\ 15
+set guifont=Source\ Code\ Pro\ 16
 set nocompatible
 set hlsearch 
 set softtabstop=4 
@@ -105,7 +109,8 @@ set ruler
 set fileencoding=utf-8
 set encoding=utf-8
 set incsearch
-set cc=80
+set colorcolumn=80
+set smartcase
 
 " configure solarized, see
 " https://github.com/Anthony24/gnome-terminal-colors-solarized
@@ -173,6 +178,8 @@ augroup vimrc
     au BufWritePost .vimrc.local :source ~/.vimrc.local
     au BufWritePost .lvimrc :source .lvimrc
 augroup END
+
+au BufNewFile,BufRead *.js setlocal tabstop=2 shiftwidth=2 softtabstop=2
 
 au VimEnter * :source Session.vim
 au VimLeave * :mksession! Session.vim
