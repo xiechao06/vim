@@ -47,7 +47,7 @@ Plugin 'mitsuhiko/vim-jinja'
 Plugin 'scrooloose/syntastic'
 Plugin 'Shougo/vimproc.vim'
 Plugin 'terryma/vim-multiple-cursors'
-" Plugin 'mxw/vim-jsx'
+Plugin 'mxw/vim-jsx'
 Plugin 'michaeljsmith/vim-indent-object'
 Plugin 'argtextobj.vim'
 Plugin 'roalddevries/yaml.vim'
@@ -69,6 +69,7 @@ Plugin 'tpope/vim-sexp-mappings-for-regular-people'
 Plugin 'tpope/vim-fireplace'
 Plugin 'ternjs/tern_for_vim'
 Plugin 'othree/yajs.vim'
+Plugin 'tpope/vim-sensible'
 
 
 call vundle#end()            " required
@@ -104,6 +105,7 @@ set ruler
 set fileencoding=utf-8
 set encoding=utf-8
 set incsearch
+set cc=80
 
 " configure solarized, see
 " https://github.com/Anthony24/gnome-terminal-colors-solarized
@@ -178,13 +180,14 @@ au BufNewFile,BufRead *.hbs :set filetype=html
 au BufNewFile,BufRead *.hbs setlocal tabstop=2 shiftwidth=2
 au BufNewFile,BufRead *.js setlocal tabstop=2 shiftwidth=2 softtabstop=2
 au BufNewFile,BufRead *.ejs setlocal tabstop=2 shiftwidth=2 softtabstop=2
+au BufNewFile,BufRead *.jsx setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd BufNewFile,BufRead *md set filetype=markdown
 
 let mapleader=","
 noremap <Leader>e :vsplit ~/.vimrc.local<CR>
 noremap <Leader>E :vsplit ~/.vimrc<CR>
 noremap <Leader>le :vsplit .lvimrc<CR>
-noremap <Leader>p :e ~/.temp<CR>
+noremap <Leader>p :vsplit ~/.temp<CR>
 nnoremap <Leader>t :TagbarToggle<CR>
 nnoremap <Leader>n :NERDTreeToggle<CR>
 nnoremap <Leader>f :CtrlP<CR>
@@ -266,4 +269,4 @@ set nowritebackup
 map <silent> <F11> :call system("wmctrl -ir " . v:windowid . " -b toggle,fullscreen")<CR>
 
 let g:sexp_enable_insert_mode_mappings = 0
-let g:jsx_ext_required = 0
+let g:jsx_ext_required = 1
