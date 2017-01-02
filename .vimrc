@@ -179,16 +179,8 @@ augroup vimrc
     au BufWritePost .lvimrc :source .lvimrc
 augroup END
 
-au BufNewFile,BufRead *.js setlocal tabstop=2 shiftwidth=2 softtabstop=2
-
 au VimEnter * :source Session.vim
 au VimLeave * :mksession! Session.vim
-au BufNewFile,BufRead *.hbs :set filetype=html
-au BufNewFile,BufRead *.hbs setlocal tabstop=2 shiftwidth=2
-au BufNewFile,BufRead *.js setlocal tabstop=2 shiftwidth=2 softtabstop=2
-au BufNewFile,BufRead *.ejs setlocal tabstop=2 shiftwidth=2 softtabstop=2
-au BufNewFile,BufRead *.jsx setlocal tabstop=2 shiftwidth=2 softtabstop=2
-autocmd BufNewFile,BufRead *md set filetype=markdown
 
 let mapleader=","
 noremap <Leader>e :vsplit ~/.vimrc.local<CR>
@@ -277,3 +269,4 @@ map <silent> <F11> :call system("wmctrl -ir " . v:windowid . " -b toggle,fullscr
 
 let g:sexp_enable_insert_mode_mappings = 0
 let g:jsx_ext_required = 1
+let g:ctrlsf_ackprg = "/usr/bin/ag"
