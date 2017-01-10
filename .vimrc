@@ -1,87 +1,77 @@
 echo ">^.^<"
-set nocompatible              " be iMproved, required
-filetype off                  " required
 
+call plug#begin('~/.vim/plugged')
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+Plug 'gmarik/Vundle.vim'
+Plug 'altercation/vim-colors-solarized'
+Plug 'mattn/emmet-vim'
+Plug 'klen/python-mode'
+Plug 'bling/vim-airline'
+Plug 'scrooloose/nerdtree'
+Plug 'kien/ctrlp.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'majutsushi/tagbar'
+Plug 'tpope/vim-surround'
+Plug 'maksimr/vim-jsbeautify'
+Plug 'marijnh/tern_for_vim'
+Plug 'Raimondi/delimitMate'
+Plug 'alfredodeza/pytest.vim'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'thinca/vim-visualstar'
+Plug 'tpope/vim-repeat'
+Plug 'kien/rainbow_parentheses.vim'
+Plug 'gregsexton/MatchTag'
+Plug 'mattn/gist-vim'
+Plug 'mattn/webapi-vim'
+Plug 'L9'
+Plug 'nelstrom/vim-qargs'
+Plug 'flazz/vim-colorschemes'
+Plug 'sjl/gundo.vim'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'othree/html5.vim'
+Plug 'rking/ag.vim'
+Plug 'Lokaltog/vim-easymotion'
+Plug 'thinca/vim-quickrun'
+Plug 'danro/rename.vim'
+Plug 'editorconfig/editorconfig'
+Plug 'embear/vim-localvimrc'
+Plug 'mitsuhiko/vim-jinja'
+Plug 'scrooloose/syntastic'
+Plug 'Shougo/vimproc.vim'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'michaeljsmith/vim-indent-object'
+Plug 'argtextobj.vim'
+Plug 'roalddevries/yaml.vim'
+Plug 'drmikehenry/vim-fontsize'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'mustache/vim-mustache-handlebars'
+Plug 'ap/vim-css-color'
+Plug 'cakebaker/scss-syntax.vim'
+Plug 'tpope/vim-commentary'
+Plug 'benmills/vimux'
+Plug 'hail2u/vim-css3-syntax'
+Plug 'tfnico/vim-gradle'
+Plug 'suan/vim-instant-markdown'
+Plug 'gkz/vim-ls'
+Plug 'isRuslan/vim-es6'
+Plug 'guns/vim-sexp'
+Plug 'tpope/vim-sexp-mappings-for-regular-people'
+Plug 'tpope/vim-fireplace'
+Plug 'ternjs/tern_for_vim'
+Plug 'tpope/vim-sensible'
+Plug 'terryma/vim-expand-region'
+Plug 'dyng/ctrlsf.vim'
+Plug 'pangloss/vim-javascript'
 
-Plugin 'gmarik/Vundle.vim'
-
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'mattn/emmet-vim'
-Plugin 'klen/python-mode'
-Plugin 'bling/vim-airline'
-Plugin 'scrooloose/nerdtree'
-Plugin 'kien/ctrlp.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'majutsushi/tagbar'
-Plugin 'tpope/vim-surround'
-"Plugin 'davidhalter/jedi-vim'
-Plugin 'maksimr/vim-jsbeautify'
-"Plugin 'marijnh/tern_for_vim'
-Plugin 'Raimondi/delimitMate'
-Plugin 'alfredodeza/pytest.vim'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
-Plugin 'thinca/vim-visualstar'
-Plugin 'tpope/vim-repeat'
-Plugin 'kien/rainbow_parentheses.vim'
-Plugin 'gregsexton/MatchTag'
-Plugin 'mattn/gist-vim'
-Plugin 'mattn/webapi-vim'
-Plugin 'L9'
-Plugin 'nelstrom/vim-qargs'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'sjl/gundo.vim'
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'othree/html5.vim'
-Plugin 'rking/ag.vim'
-Plugin 'Lokaltog/vim-easymotion'
-Plugin 'thinca/vim-quickrun'
-Plugin 'danro/rename.vim'
-Plugin 'editorconfig/editorconfig'
-Plugin 'embear/vim-localvimrc'
-Plugin 'mitsuhiko/vim-jinja'
-Plugin 'scrooloose/syntastic'
-Plugin 'Shougo/vimproc.vim'
-Plugin 'terryma/vim-multiple-cursors'
-" Plugin 'mxw/vim-jsx'
-Plugin 'michaeljsmith/vim-indent-object'
-Plugin 'argtextobj.vim'
-Plugin 'roalddevries/yaml.vim'
-Plugin 'drmikehenry/vim-fontsize'
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'mustache/vim-mustache-handlebars'
-Plugin 'ap/vim-css-color'
-Plugin 'cakebaker/scss-syntax.vim'
-Plugin 'tpope/vim-commentary'
-Plugin 'benmills/vimux'
-" Plugin 'briancollins/vim-jst'
-Plugin 'hail2u/vim-css3-syntax'
-Plugin 'tfnico/vim-gradle'
-Plugin 'suan/vim-instant-markdown'
-Plugin 'gkz/vim-ls'
-Plugin 'isRuslan/vim-es6'
-Plugin 'guns/vim-sexp'
-Plugin 'tpope/vim-sexp-mappings-for-regular-people'
-Plugin 'tpope/vim-fireplace'
-Plugin 'ternjs/tern_for_vim'
-" Plugin 'othree/yajs.vim'
-Plugin 'tpope/vim-sensible'
-Plugin 'terryma/vim-expand-region'
-" Plugin 'gavocanov/vim-js-indent'
-Plugin 'dyng/ctrlsf.vim'
-Plugin 'pangloss/vim-javascript'
-
-
-call vundle#end()            " required
-" Pathogen load
-filetype off
-filetype plugin indent on
+call plug#end()
 
 runtime macros/matchit.vim
+
+filetype on
+filetype plugin on
+filetype indent on
+syntax on
 
 set nu
 set guioptions-=m
@@ -100,7 +90,6 @@ set shiftwidth=4
 set expandtab
 set autoindent
 set smartcase
-filetype plugin on
 let mapleader=","
 noremap \ ,
 syntax enable
@@ -269,5 +258,4 @@ set nowritebackup
 map <silent> <F11> :call system("wmctrl -ir " . v:windowid . " -b toggle,fullscreen")<CR>
 
 let g:sexp_enable_insert_mode_mappings = 0
-let g:jsx_ext_required = 1
 let g:ctrlsf_ackprg = "/usr/bin/ag"
