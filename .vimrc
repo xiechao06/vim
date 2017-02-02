@@ -62,7 +62,8 @@ Plug 'ternjs/tern_for_vim'
 Plug 'tpope/vim-sensible'
 Plug 'terryma/vim-expand-region'
 Plug 'dyng/ctrlsf.vim'
-Plug 'pangloss/vim-javascript'
+Plug 'jelera/vim-javascript-syntax'
+Plug 'HerringtonDarkholme/yats.vim'
 
 call plug#end()
 
