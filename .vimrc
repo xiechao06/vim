@@ -63,7 +63,9 @@ Plug 'tpope/vim-sensible'
 Plug 'terryma/vim-expand-region'
 Plug 'dyng/ctrlsf.vim'
 Plug 'jelera/vim-javascript-syntax'
-Plug 'HerringtonDarkholme/yats.vim'
+" Plug 'HerringtonDarkholme/yats.vim'
+Plug 'leafgarland/typescript-vim'
+Plug 'vim-scripts/JavaScript-Indent'
 
 call plug#end()
 
@@ -172,7 +174,7 @@ augroup END
 
 au VimEnter * :source Session.vim
 au VimLeave * :mksession! Session.vim
-
+let g:localvimrc_event=[ "VimEnter" ]
 let mapleader=","
 noremap <Leader>e :vsplit ~/.vimrc.local<CR>
 noremap <Leader>E :vsplit ~/.vimrc<CR>
