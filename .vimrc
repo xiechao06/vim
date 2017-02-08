@@ -63,9 +63,10 @@ Plug 'tpope/vim-sensible'
 Plug 'terryma/vim-expand-region'
 Plug 'dyng/ctrlsf.vim'
 Plug 'jelera/vim-javascript-syntax'
-" Plug 'HerringtonDarkholme/yats.vim'
-Plug 'leafgarland/typescript-vim'
-Plug 'vim-scripts/JavaScript-Indent'
+Plug 'sheerun/vim-polyglot'
+Plug 'elzr/vim-json'
+Plug 'Quramy/tsuquyomi'
+Plug 'Shougo/neocomplete.vim'
 
 call plug#end()
 
@@ -262,3 +263,31 @@ map <silent> <F11> :call system("wmctrl -ir " . v:windowid . " -b toggle,fullscr
 
 let g:sexp_enable_insert_mode_mappings = 0
 let g:ctrlsf_ackprg = "/usr/bin/ag"
+
+let g:javascript_conceal_function             = "ƒ"
+let g:javascript_conceal_null                 = "ø"
+let g:javascript_conceal_this                 = "@"
+let g:javascript_conceal_return               = "⇚"
+let g:javascript_conceal_undefined            = "¿"
+let g:javascript_conceal_NaN                  = "ℕ"
+let g:javascript_conceal_prototype            = "¶"
+let g:javascript_conceal_static               = "•"
+let g:javascript_conceal_super                = "Ω"
+let g:javascript_conceal_arrow_function       = "⇒"
+let g:javascript_conceal_noarg_arrow_function = "🞅"
+let g:javascript_conceal_underscore_arrow_function = "🞅"
+
+let g:tsuquyomi_completion_detail = 1
+let g:tsuquyomi_javascript_support = 1
+let g:tsuquyomi_completion_preview = 1
+let g:tsuquyomi_disable_default_mappings = 1
+set ballooneval
+autocmd FileType typescript setlocal completeopt+=menu,preview
+autocmd FileType typescript setlocal balloonexpr=tsuquyomi#balloonexpr()
+autocmd FileType typescript nmap <buffer> <Leader>t : <C-u>echo tsuquyomi#hint()<CR>
+let g:neocomplete#enable_at_startup = 1
+if !exists('g:neocomplete#force_omni_input_patterns')
+    let g:neocomplete#force_omni_input_patterns = {}
+endif
+let g:neocomplete#force_omni_input_patterns.typescript = '[^. *\t]\.\w*\|\h\w*::'
+noremap <C-^>
