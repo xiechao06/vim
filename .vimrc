@@ -38,8 +38,8 @@ Plug 'editorconfig/editorconfig'
 Plug 'embear/vim-localvimrc'
 Plug 'mitsuhiko/vim-jinja'
 Plug 'scrooloose/syntastic'
-Plug 'Shougo/vimproc.vim'
-Plug 'terryma/vim-multiple-cursors'
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+Plug 'kristijanhusak/vim-multiple-cursors'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'argtextobj.vim'
 Plug 'roalddevries/yaml.vim'
@@ -67,6 +67,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'elzr/vim-json'
 Plug 'Quramy/tsuquyomi'
 Plug 'Shougo/neocomplete.vim'
+Plug 'neitanod/vim-clevertab'
 
 call plug#end()
 
@@ -264,19 +265,6 @@ map <silent> <F11> :call system("wmctrl -ir " . v:windowid . " -b toggle,fullscr
 let g:sexp_enable_insert_mode_mappings = 0
 let g:ctrlsf_ackprg = "/usr/bin/ag"
 
-let g:javascript_conceal_function             = "ƒ"
-let g:javascript_conceal_null                 = "ø"
-let g:javascript_conceal_this                 = "@"
-let g:javascript_conceal_return               = "⇚"
-let g:javascript_conceal_undefined            = "¿"
-let g:javascript_conceal_NaN                  = "ℕ"
-let g:javascript_conceal_prototype            = "¶"
-let g:javascript_conceal_static               = "•"
-let g:javascript_conceal_super                = "Ω"
-let g:javascript_conceal_arrow_function       = "⇒"
-let g:javascript_conceal_noarg_arrow_function = "🞅"
-let g:javascript_conceal_underscore_arrow_function = "🞅"
-
 let g:tsuquyomi_completion_detail = 1
 let g:tsuquyomi_javascript_support = 1
 let g:tsuquyomi_completion_preview = 1
@@ -284,10 +272,38 @@ let g:tsuquyomi_disable_default_mappings = 1
 set ballooneval
 autocmd FileType typescript setlocal completeopt+=menu,preview
 autocmd FileType typescript setlocal balloonexpr=tsuquyomi#balloonexpr()
-autocmd FileType typescript nmap <buffer> <Leader>t : <C-u>echo tsuquyomi#hint()<CR>
+autocmd FileType typescript nnoremap <buffer> <Leader>m :echo tsuquyomi#hint()<CR>
 let g:neocomplete#enable_at_startup = 1
 if !exists('g:neocomplete#force_omni_input_patterns')
     let g:neocomplete#force_omni_input_patterns = {}
 endif
 let g:neocomplete#force_omni_input_patterns.typescript = '[^. *\t]\.\w*\|\h\w*::'
 noremap <C-^>
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_auto_select = 1
+inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><C-Space> neocomplete#start_manual_complete()
+
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+  " return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
+  " For no inserting <CR> key.
+  return pumvisible() ? "\<C-y>" : "\<CR>"
+endfunction
+let g:neocomplete#enable_auto_close_preview = 1
+let g:neocomplete#enable_fuzzy_completion = 0
+
+" Called once right before you start selecting multiple cursors
+function! Multiple_cursors_before()
+  if exists(':NeoCompleteLock')==2
+    exe 'NeoCompleteLock'
+  endif
+endfunction
+
+" Called once only when the multiple selection is canceled (default <Esc>)
+function! Multiple_cursors_after()
+  if exists(':NeoCompleteUnlock')==2
+    exe 'NeoCompleteUnlock'
+  endif
+endfunction
