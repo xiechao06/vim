@@ -280,8 +280,8 @@ if !exists('g:neocomplete#force_omni_input_patterns')
 endif
 let g:neocomplete#force_omni_input_patterns.typescript = '[^. *\t]\.\w*\|\h\w*::'
 noremap <C-^>
-let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_auto_select = 1
+let g:neocomplete#disable_auto_complete = 1
 inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><C-Space> neocomplete#start_manual_complete()
