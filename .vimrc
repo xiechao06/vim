@@ -68,6 +68,7 @@ Plug 'elzr/vim-json'
 Plug 'Quramy/tsuquyomi'
 Plug 'Shougo/neocomplete.vim'
 Plug 'neitanod/vim-clevertab'
+Plug 'tpope/vim-abolish'
 
 call plug#end()
 
