@@ -67,10 +67,8 @@ Plug 'sheerun/vim-polyglot'
 Plug 'elzr/vim-json'
 Plug 'Quramy/tsuquyomi'
 Plug 'Shougo/neocomplete.vim'
-Plug 'neitanod/vim-clevertab'
 Plug 'tpope/vim-abolish'
 Plug 'nixon/vim-vmath'
-Plug 'shinokada/listtrans.vim'
 Plug 'fisadev/dragvisuals.vim'
 
 call plug#end()
