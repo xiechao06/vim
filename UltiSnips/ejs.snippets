@@ -1,0 +1,13 @@
+snippet if "" b
+<% if ($1) { %>
+$2
+<% } %>
+endsnippet
+
+snippet expr "unescaped expression" i
+<%- $1 %>
+endsnippet
+
+snippet expr "escaped expression" i
+<%= $1 %>
+endsnippet

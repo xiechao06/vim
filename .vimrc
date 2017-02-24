@@ -70,8 +70,9 @@ Plug 'Shougo/neocomplete.vim'
 Plug 'neitanod/vim-clevertab'
 Plug 'tpope/vim-abolish'
 Plug 'nixon/vim-vmath'
-Plug 'shinokada/listtrans.vim'
 Plug 'fisadev/dragvisuals.vim'
+Plug 'nikvdp/ejs-syntax'
+Plug 'gutenye/json5.vim'
 
 call plug#end()
 
