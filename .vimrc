@@ -270,6 +270,9 @@ map <silent> <F11> :call system("wmctrl -ir " . v:windowid . " -b toggle,fullscr
 let g:sexp_enable_insert_mode_mappings = 0
 let g:ctrlsf_ackprg = "/usr/bin/ag"
 
+au BufEnter,BufNew *.js set filetype=typescript
+au BufEnter,BufNew *.js UltiSnipsAddFiletypes javascript
+
 let g:tsuquyomi_completion_detail = 1
 let g:tsuquyomi_javascript_support = 1
 let g:tsuquyomi_completion_preview = 1
