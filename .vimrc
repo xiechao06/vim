@@ -8,7 +8,7 @@ Plug 'mattn/emmet-vim'
 Plug 'klen/python-mode'
 Plug 'bling/vim-airline'
 Plug 'scrooloose/nerdtree'
-Plug 'kien/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-surround'
@@ -67,7 +67,6 @@ Plug 'sheerun/vim-polyglot'
 Plug 'elzr/vim-json'
 Plug 'Quramy/tsuquyomi'
 Plug 'Shougo/neocomplete.vim'
-Plug 'neitanod/vim-clevertab'
 Plug 'tpope/vim-abolish'
 Plug 'nixon/vim-vmath'
 Plug 'fisadev/dragvisuals.vim'
@@ -327,3 +326,5 @@ vmap  <expr>  <UP>     DVB_Drag('up')
 vmap  <expr>  D        DVB_Duplicate()
 " Remove any introduced trailing whitespace after moving...
 let g:DVB_TrimWS = 1
+
+let g:ctrlp_extensions = ['unicode']
