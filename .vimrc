@@ -71,6 +71,7 @@ Plug 'nixon/vim-vmath'
 Plug 'fisadev/dragvisuals.vim'
 Plug 'nikvdp/ejs-syntax'
 Plug 'gutenye/json5.vim'
+Plug 'tmux-plugins/vim-tmux-focus-events'
 
 call plug#end()
 
@@ -317,7 +318,6 @@ endfunction
 vmap <expr>  ++  VMATH_YankAndAnalyse()
 nmap         ++  vip++
 
-
 vmap  <expr>  <LEFT>   DVB_Drag('left')
 vmap  <expr>  <RIGHT>  DVB_Drag('right')
 vmap  <expr>  <DOWN>   DVB_Drag('down')
@@ -326,4 +326,21 @@ vmap  <expr>  D        DVB_Duplicate()
 " Remove any introduced trailing whitespace after moving...
 let g:DVB_TrimWS = 1
 
-let g:ctrlp_extensions = ['unicode']
+let s:hidden_all = 0
+function! ToggleHiddenAll()
+    if s:hidden_all  == 0
+        let s:hidden_all = 1
+        set noshowmode
+        set noruler
+        set laststatus=0
+        set noshowcmd
+    else
+        let s:hidden_all = 0
+        set showmode
+        set ruler
+        set laststatus=2
+        set showcmd
+    endif
+endfunction
+
+nnoremap <S-h> :call ToggleHiddenAll()<CR>
