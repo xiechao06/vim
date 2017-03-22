@@ -104,7 +104,7 @@ let mapleader=","
 noremap \ ,
 syntax enable
 set background=dark
-colorscheme molokai
+colorscheme monokain
 set ruler
 set fileencoding=utf-8
 set encoding=utf-8
@@ -335,12 +335,14 @@ function! ToggleHiddenAll()
         set noruler
         set laststatus=0
         set noshowcmd
+        set nu!
     else
         let s:hidden_all = 0
         set showmode
         set ruler
         set laststatus=2
         set showcmd
+        set nu
     endif
 endfunction
 
@@ -352,3 +354,7 @@ nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>
 nnoremap <silent> <C-j> :TmuxNavigateDown<cr>
 nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
 nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
+
+if !has("gui_running")
+    inoremap <C-@> <C-x><C-o>
+endif
