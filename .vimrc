@@ -1,9 +1,5 @@
-echo ">^.^<"
-
 call plug#begin('~/.vim/plugged')
 
-Plug 'gmarik/Vundle.vim'
-Plug 'altercation/vim-colors-solarized'
 Plug 'mattn/emmet-vim'
 Plug 'klen/python-mode'
 Plug 'bling/vim-airline'
@@ -12,7 +8,6 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-surround'
-Plug 'maksimr/vim-jsbeautify'
 Plug 'marijnh/tern_for_vim'
 Plug 'Raimondi/delimitMate'
 Plug 'alfredodeza/pytest.vim'
@@ -51,7 +46,6 @@ Plug 'cakebaker/scss-syntax.vim'
 Plug 'tpope/vim-commentary'
 Plug 'benmills/vimux'
 Plug 'hail2u/vim-css3-syntax'
-Plug 'tfnico/vim-gradle'
 Plug 'suan/vim-instant-markdown'
 Plug 'gkz/vim-ls'
 Plug 'isRuslan/vim-es6'
@@ -59,16 +53,15 @@ Plug 'guns/vim-sexp'
 Plug 'tpope/vim-sexp-mappings-for-regular-people'
 Plug 'tpope/vim-fireplace'
 Plug 'ternjs/tern_for_vim'
-Plug 'tpope/vim-sensible'
 Plug 'dyng/ctrlsf.vim'
-Plug 'jelera/vim-javascript-syntax'
-Plug 'sheerun/vim-polyglot'
-Plug 'elzr/vim-json'
 Plug 'Quramy/tsuquyomi'
 Plug 'Shougo/neocomplete.vim'
 Plug 'tpope/vim-abolish'
 Plug 'nixon/vim-vmath'
 Plug 'fisadev/dragvisuals.vim'
+Plug 'jelera/vim-javascript-syntax'
+Plug 'sheerun/vim-polyglot'
+Plug 'elzr/vim-json'
 Plug 'nikvdp/ejs-syntax'
 Plug 'gutenye/json5.vim'
 Plug 'tmux-plugins/vim-tmux-focus-events'
@@ -76,7 +69,7 @@ Plug 'christoomey/vim-tmux-navigator'
 
 call plug#end()
 
-runtime macros/matchit.vim
+runtime! macros/matchit.vim
 
 filetype on
 filetype plugin on
@@ -179,8 +172,8 @@ augroup vimrc
     au BufWritePost .lvimrc :source .lvimrc
 augroup END
 
-au VimEnter * :source Session.vim
 au VimLeave * :mksession! Session.vim
+au VimEnter * :source Session.vim
 let g:localvimrc_event=[ "VimEnter" ]
 let mapleader=","
 noremap <Leader>e :vsplit ~/.vimrc.local<CR>
@@ -286,7 +279,6 @@ if !exists('g:neocomplete#force_omni_input_patterns')
     let g:neocomplete#force_omni_input_patterns = {}
 endif
 let g:neocomplete#force_omni_input_patterns.typescript = '[^. *\t]\.\w*\|\h\w*::'
-noremap <C-^>
 let g:neocomplete#enable_auto_select = 1
 let g:neocomplete#disable_auto_complete = 1
 inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
@@ -350,10 +342,10 @@ nnoremap <S-h> :call ToggleHiddenAll()<CR>
 
 let g:tmux_navigator_no_mappings = 1
 
-nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>
-nnoremap <silent> <C-j> :TmuxNavigateDown<cr>
-nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
-nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
+nnoremap <silent> <C-w>h :TmuxNavigateLeft<cr>
+nnoremap <silent> <C-w>j :TmuxNavigateDown<cr>
+nnoremap <silent> <C-w>k :TmuxNavigateUp<cr>
+nnoremap <silent> <C-w>l :TmuxNavigateRight<cr>
 
 if !has("gui_running")
     inoremap <C-@> <C-x><C-o>
