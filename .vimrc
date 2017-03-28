@@ -37,7 +37,7 @@ Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 Plug 'kristijanhusak/vim-multiple-cursors'
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'argtextobj.vim'
-Plug 'roalddevries/yaml.vim'
+Plug 'stephpy/vim-yaml'
 Plug 'drmikehenry/vim-fontsize'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'mustache/vim-mustache-handlebars'
@@ -66,6 +66,7 @@ Plug 'nikvdp/ejs-syntax'
 Plug 'gutenye/json5.vim'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'cespare/vim-toml'
 
 call plug#end()
 
