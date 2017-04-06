@@ -67,6 +67,8 @@ Plug 'gutenye/json5.vim'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'cespare/vim-toml'
+Plug 'maxbrunsfeld/vim-yankstack'
+Plug 'jpalardy/vim-slime'
 
 call plug#end()
 
@@ -77,7 +79,7 @@ filetype plugin on
 filetype indent on
 syntax on
 
-set nu
+" set nu
 set guioptions-=m
 set guioptions-=T
 set guioptions-=r
@@ -180,7 +182,9 @@ let mapleader=","
 noremap <Leader>e :vsplit ~/.vimrc.local<CR>
 noremap <Leader>E :vsplit ~/.vimrc<CR>
 noremap <Leader>le :vsplit .lvimrc<CR>
-noremap <Leader>p :vsplit ~/.temp<CR>
+nmap <leader>p <Plug>yankstack_substitute_older_paste
+nmap <leader>P <Plug>yankstack_substitute_newer_paste
+nmap <leader>ls :vsplit .temp<CR>
 nnoremap <Leader>t :TagbarToggle<CR>
 nnoremap <Leader>n :NERDTreeToggle<CR>
 nnoremap <Leader>f :CtrlP<CR>
