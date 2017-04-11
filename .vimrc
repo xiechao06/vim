@@ -69,6 +69,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'cespare/vim-toml'
 Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'jpalardy/vim-slime'
+Plug 'danilo-augusto/vim-afterglow'
 
 call plug#end()
 
@@ -100,7 +101,7 @@ let mapleader=","
 noremap \ ,
 syntax enable
 set background=dark
-colorscheme monokain
+colorscheme afterglow
 set ruler
 set fileencoding=utf-8
 set encoding=utf-8
