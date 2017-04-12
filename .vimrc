@@ -70,6 +70,7 @@ Plug 'cespare/vim-toml'
 Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'jpalardy/vim-slime'
 Plug 'danilo-augusto/vim-afterglow'
+Plug 'tpope/vim-unimpaired'
 
 call plug#end()
 
