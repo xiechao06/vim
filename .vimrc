@@ -178,7 +178,8 @@ augroup vimrc
 augroup END
 
 au VimLeave * :mksession! Session.vim
-au VimEnter * :source Session.vim
+" au VimEnter * :source Session.vim
+
 let g:localvimrc_event=[ "VimEnter" ]
 let mapleader=","
 noremap <Leader>e :vsplit ~/.vimrc.local<CR>
