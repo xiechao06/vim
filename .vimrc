@@ -71,6 +71,8 @@ Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'jpalardy/vim-slime'
 Plug 'danilo-augusto/vim-afterglow'
 Plug 'tpope/vim-unimpaired'
+Plug 'sbdchd/neoformat'
+Plug 'gioele/vim-autoswap'
 
 call plug#end()
 
@@ -358,3 +360,5 @@ nnoremap <silent> <C-w>l :TmuxNavigateRight<cr>
 if !has("gui_running")
     inoremap <C-@> <C-x><C-o>
 endif
+
+let g:autoswap_detect_tmux = 1
