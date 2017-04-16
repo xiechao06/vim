@@ -1,5 +1,6 @@
 call plug#begin('~/.vim/plugged')
 
+Plug 'tpope/vim-sensible'
 Plug 'mattn/emmet-vim'
 Plug 'klen/python-mode'
 Plug 'bling/vim-airline'
@@ -200,6 +201,7 @@ noremap <space> viw
 inoremap <C-j> <CR><CR><C-o>k<Tab>
 
 if filereadable(expand("$HOME/.vimrc.local"))
+    echo "hello"
     source $HOME/.vimrc.local
 endif
 
@@ -362,3 +364,5 @@ if !has("gui_running")
 endif
 
 let g:autoswap_detect_tmux = 1
+
+set sessionoptions-=options
