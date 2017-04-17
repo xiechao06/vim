@@ -201,7 +201,6 @@ noremap <space> viw
 inoremap <C-j> <CR><CR><C-o>k<Tab>
 
 if filereadable(expand("$HOME/.vimrc.local"))
-    echo "hello"
     source $HOME/.vimrc.local
 endif
 
