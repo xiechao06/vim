@@ -112,3 +112,15 @@ snippet eslint
 /* eslint-disable ${1:max-len} */
 /* eslint-enable $1 */
 endsnippet
+
+snippet it "mocha unit test" b
+it('$1', function () {
+  $2	
+});
+endsnippet
+
+snippet describe "mocha unit test suite" b
+describe('$1', function () {
+  $2	
+});
+endsnippet
