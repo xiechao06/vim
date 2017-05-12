@@ -74,6 +74,7 @@ Plug 'danilo-augusto/vim-afterglow'
 Plug 'tpope/vim-unimpaired'
 Plug 'sbdchd/neoformat'
 Plug 'gioele/vim-autoswap'
+Plug 'heavenshell/vim-jsdoc'
 
 call plug#end()
 
