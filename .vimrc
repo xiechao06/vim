@@ -102,6 +102,8 @@ set shiftwidth=4
 set expandtab
 set autoindent
 set smartcase
+" enable mouse scrolling in tmux
+set mouse=a
 let mapleader=","
 noremap \ ,
 syntax enable
