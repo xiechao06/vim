@@ -66,7 +66,6 @@ Plug 'elzr/vim-json'
 Plug 'nikvdp/ejs-syntax'
 Plug 'gutenye/json5.vim'
 Plug 'tmux-plugins/vim-tmux-focus-events'
-Plug 'christoomey/vim-tmux-navigator'
 Plug 'cespare/vim-toml'
 Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'jpalardy/vim-slime'
@@ -75,6 +74,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'sbdchd/neoformat'
 Plug 'gioele/vim-autoswap'
 Plug 'heavenshell/vim-jsdoc'
+Plug 'Shougo/vimshell.vim' 
 
 call plug#end()
 
