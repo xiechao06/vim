@@ -246,6 +246,9 @@ let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_sass_checkers = ['stylint']
 nmap tm :tabedit %<CR>:tabmove -1<CR><c-l>
 nmap td :tabclose<CR>
+no <leader>tp :tabp<CR>
+no <leader>tn :tabn<CR>
+
 if has('persistent_undo')      "check if your vim version supports it
   set undofile                 "turn on the feature  
   set undodir=$HOME/.vim/undo  "directory where the undo files will be stored
@@ -369,3 +372,10 @@ endif
 let g:autoswap_detect_tmux = 1
 
 set sessionoptions-=options
+
+" Use a blinking upright bar cursor in Insert mode, a blinking block in normal
+if &term =~ '256color'
+    let &t_SI = "\<Esc>[5 q"
+    let &t_EI = "\<Esc>[1 q"
+endif
+
