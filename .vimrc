@@ -75,6 +75,7 @@ Plug 'sbdchd/neoformat'
 Plug 'gioele/vim-autoswap'
 Plug 'heavenshell/vim-jsdoc'
 Plug 'Shougo/vimshell.vim' 
+Plug 'rakr/vim-one'
 
 call plug#end()
 
@@ -374,8 +375,10 @@ let g:autoswap_detect_tmux = 1
 set sessionoptions-=options
 
 " Use a blinking upright bar cursor in Insert mode, a blinking block in normal
-if &term =~ '256color'
-    let &t_SI = "\<Esc>[5 q"
-    let &t_EI = "\<Esc>[1 q"
-endif
+" if &term =~ '256color'
+"     let &t_SI = "\<Esc>[5 q"
+"     let &t_EI = "\<Esc>[1 q"
+" endif
+
+highlight Visual ctermbg=magenta
 
