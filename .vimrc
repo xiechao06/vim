@@ -186,7 +186,7 @@ augroup vimrc
 augroup END
 
 au VimLeave * :mksession! Session.vim
-" au VimEnter * :source Session.vim
+au VimEnter * :source Session.vim
 
 let g:localvimrc_event=[ "VimEnter" ]
 let mapleader=","
@@ -266,6 +266,7 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
 ino <c-enter> <enter><esc>O
 ino <c-s-enter> <esc>O
+no <c-j> i<enter><esc>O
 
 let g:syntastic_mode_map = {
     \ "mode": "active",
