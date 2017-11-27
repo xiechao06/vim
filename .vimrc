@@ -76,6 +76,13 @@ Plug 'gioele/vim-autoswap'
 Plug 'heavenshell/vim-jsdoc'
 Plug 'Shougo/vimshell.vim' 
 Plug 'rakr/vim-one'
+Plug 'KabbAmine/zeavim.vim', {'on': [
+            \    'Zeavim', 'Docset',
+            \    '<Plug>Zeavim',
+            \    '<Plug>ZVVisSelection',
+            \    '<Plug>ZVKeyDocset',
+            \    '<Plug>ZVMotion'
+            \ ]}
 
 call plug#end()
 
