@@ -83,6 +83,7 @@ Plug 'KabbAmine/zeavim.vim', {'on': [
             \    '<Plug>ZVKeyDocset',
             \    '<Plug>ZVMotion'
             \ ]}
+Plug 'maksimr/vim-jsbeautify'
 
 call plug#end()
 
@@ -194,6 +195,14 @@ augroup END
 
 au VimLeave * :mksession! Session.vim
 au VimEnter * :source Session.vim
+
+augroup autofmt
+    autocmd!
+    au BufWritePre *.html :call HtmlBeautify()
+    au BufWritePre *.js :call JsBeautify()
+    au BufWritePre *.jsx :call JsxBeautify()
+    au BufWritePre *.css :call CSSBeautify()
+augroup END
 
 let g:localvimrc_event=[ "VimEnter" ]
 let mapleader=","
