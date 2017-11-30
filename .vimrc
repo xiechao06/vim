@@ -84,6 +84,7 @@ Plug 'KabbAmine/zeavim.vim', {'on': [
             \    '<Plug>ZVMotion'
             \ ]}
 Plug 'maksimr/vim-jsbeautify'
+Plug 'stephenway/postcss.vim'
 
 call plug#end()
 
