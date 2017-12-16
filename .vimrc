@@ -116,7 +116,8 @@ set showtabline=0
 " enable mouse scrolling in tmux
 set mouse=a
 let mapleader=","
-noremap \ ,
+let maplocalleader="\\"
+" noremap \ ,
 syntax enable
 set background=dark
 colorscheme afterglow
@@ -369,13 +370,6 @@ endfunction
 
 nnoremap <S-h> :call ToggleHiddenAll()<CR>
 
-" let g:tmux_navigator_no_mappings = 1
-
-" nnoremap <silent> <C-w>h :TmuxNavigateLeft<cr>
-" nnoremap <silent> <C-w>j :TmuxNavigateDown<cr>
-" nnoremap <silent> <C-w>k :TmuxNavigateUp<cr>
-" nnoremap <silent> <C-w>l :TmuxNavigateRight<cr>
-
 if !has("gui_running")
     inoremap <C-@> <C-x><C-o>
 endif
@@ -392,3 +386,18 @@ set sessionoptions-=options
 
 highlight Visual ctermbg=magenta
 
+
+" Space to toggle folds.
+nnoremap <Space> za
+vnoremap <Space> za
+
+augroup ft_html
+    au!
+    au FileType html,jinja,htmldjango setlocal foldmethod=manual
+
+    " Use <localleader>f to fold the current tag.
+    au FileType html,jinja,htmldjango nnoremap <buffer> <localleader>f Vatzf
+
+    " Indent tag
+    au FileType html,jinja,htmldjango nnoremap <buffer> <localleader>= Vat=
+augroup END
