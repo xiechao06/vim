@@ -85,6 +85,7 @@ Plug 'KabbAmine/zeavim.vim', {'on': [
             \ ]}
 Plug 'maksimr/vim-jsbeautify'
 Plug 'alexlafroscia/postcss-syntax.vim'
+Plug 'gcmt/breeze.vim'
 
 call plug#end()
 
@@ -401,3 +402,8 @@ augroup ft_html
     " Indent tag
     au FileType html,jinja,htmldjango nnoremap <buffer> <localleader>= Vat=
 augroup END
+
+" jump to all visible opening tags after the cursor position
+nmap <localleader>/ <Plug>(breeze-jump-tag-forward)
+" jump to all visible opening tags before the cursor position
+nmap <localleader>? <Plug>(breeze-jump-tag-backward)
