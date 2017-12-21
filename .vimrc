@@ -86,6 +86,7 @@ Plug 'KabbAmine/zeavim.vim', {'on': [
 Plug 'maksimr/vim-jsbeautify'
 Plug 'alexlafroscia/postcss-syntax.vim'
 Plug 'gcmt/breeze.vim'
+Plug 'christoomey/vim-tmux-navigator'
 
 call plug#end()
 
@@ -407,3 +408,11 @@ augroup END
 nmap <localleader>/ <Plug>(breeze-jump-tag-forward)
 " jump to all visible opening tags before the cursor position
 nmap <localleader>? <Plug>(breeze-jump-tag-backward)
+
+let g:tmux_navigator_no_mappings = 1
+
+nnoremap <silent> <c-w>h :TmuxNavigateLeft<cr>
+nnoremap <silent> <c-w>j :TmuxNavigateDown<cr>
+nnoremap <silent> <c-w>k :TmuxNavigateUp<cr>
+nnoremap <silent> <c-w>l :TmuxNavigateRight<cr>
+nnoremap <silent> <c-\> :TmuxNavigatePrevious<cr>
