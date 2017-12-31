@@ -195,8 +195,20 @@ augroup vimrc
     au BufWritePost .lvimrc :source .lvimrc
 augroup END
 
-au VimLeave * :mksession! Session.vim
-au VimEnter * :source Session.vim
+function! MkSession() 
+    if !empty(glob('.git'))
+        :mksession! Session.vim
+    endif
+endfunction
+
+function! LoadSession() 
+    if !empty(glob('.git')) && !empty(glob('Session.vim'))
+        :source Session.vim
+    endif
+endfunction
+
+au VimLeave * :call MkSession()
+au VimEnter * :call LoadSession()
 
 let g:localvimrc_event=[ "VimEnter" ]
 let mapleader=","
@@ -274,8 +286,6 @@ au BufEnter *.py setlocal nonu
 
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
-ino <c-enter> <enter><esc>O
-ino <c-s-enter> <esc>O
 no <c-j> i<enter><esc>O
 
 let g:syntastic_mode_map = {
