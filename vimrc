@@ -195,13 +195,19 @@ augroup vimrc
 augroup END
 
 function! MkSession() 
-    if !empty(glob('.git'))
+    let gitdir=system("git rev-parse --show-toplevel")
+    " See if the command output starts with 'fatal' (if it does, not in a git repo)
+    let isnotgitdir=matchstr(gitdir, '^fatal:.*')
+    if empty(isnotgitdir)
         :mksession! Session.vim
     endif
 endfunction
 
 function! LoadSession() 
-    if !empty(glob('.git')) && !empty(glob('Session.vim'))
+    let gitdir=system("git rev-parse --show-toplevel")
+    " See if the command output starts with 'fatal' (if it does, not in a git repo)
+    let isnotgitdir=matchstr(gitdir, '^fatal:.*')
+    if empty(isnotgitdir)
         :source Session.vim
     endif
 endfunction
