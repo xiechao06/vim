@@ -207,7 +207,7 @@ function! LoadSession()
     let gitdir=system("git rev-parse --show-toplevel")
     " See if the command output starts with 'fatal' (if it does, not in a git repo)
     let isnotgitdir=matchstr(gitdir, '^fatal:.*')
-    if empty(isnotgitdir)
+    if empty(isnotgitdir) && filereadable('./Session.vim')
         :source Session.vim
     endif
 endfunction
