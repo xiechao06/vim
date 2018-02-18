@@ -84,6 +84,7 @@ Plug 'maksimr/vim-jsbeautify'
 Plug 'alexlafroscia/postcss-syntax.vim'
 Plug 'gcmt/breeze.vim'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'Yggdroot/indentLine'
 
 call plug#end()
 
@@ -168,6 +169,8 @@ let g:jedi#popup_on_dot = 0
 let g:UltiSnipsUsePythonVersion = 3
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsListSnippets="<c-s><c-s>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
@@ -271,6 +274,7 @@ ino <m-4> <esc>4gt
 ino <m-5> <esc>5gt
 
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_typescript_checkers = ['eslint']
 let g:syntastic_sass_checkers = ['stylint']
 nmap tm :tabedit %<CR>:tabmove -1<CR><c-l>
 nmap td :tabclose<CR>
@@ -288,6 +292,7 @@ let javascript_fold=1
 
 au BufEnter swagger.yml setlocal foldmethod=indent foldlevelstart=2
 au BufEnter *.py setlocal nonu
+au BufEnter *.javascript setlocal filetype=typescript
 
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
